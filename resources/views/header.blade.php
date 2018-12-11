@@ -162,16 +162,17 @@
                     </ul>
                 </div>
             </div>
+
+
+            @inject ('menus', '\App\Services\GetItemsForMenuService' )
             <div class="pizzaro-secondary-navigation">
                 <nav class="secondary-navigation"  aria-label="Secondary Navigation">
                     <ul  class="menu">
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po po-pizza"></i>Пицца</a></li>
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po po-burger"></i>Бургеры</a></li>
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po po-salads"></i>Салаты</a></li>
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po po-tacos"></i>Тако</a></li>
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po po-wraps"></i>Wraps</a></li>
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po po-fries"></i>Фри</a></li>
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po po-drinks"></i>Напитки</a></li>
+
+                        @foreach($menus->getMenu() as $menu)
+                        <li class="menu-item"><a href="{{route('food')}}"><i class="po {{$menu->icon}}"></i>{{$menu->name}}</a></li>
+                        @endforeach
+
                     </ul>
                 </nav>
                 <!-- #secondary-navigation -->
