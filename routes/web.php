@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('pages.index');
 })-> name ('home');
 
-Route::get('/food/', function () {
+Route::get('/food/{key}', function ($key) {
     return view('pages.shop-grid-3-column');
 })->name ('food');
 

@@ -119,17 +119,17 @@
                             <li class="menu-item"><a href="store-locator.html">Store Locator</a></li>
                         </ul>
                     </div>
+
                     <div class="handheld-navigation">
                         <span class="phm-close">Close</span>
                         <ul  class="menu">
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-pizza"></i>Пицца</a></li>
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-burger"></i>Бургеры</a></li>
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-salads"></i>Салаты</a></li>
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-tacos"></i>Tacos</a></li>
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-wraps"></i>Wraps</a></li>
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-fries"></i>Fries</a></li>
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-salads"></i>Salads</a></li>
-                            <li class="menu-item "><a href="{{route('food')}}"><i class="po po-drinks"></i>Напитки</a></li>
+
+                    @inject ('menus', '\App\Services\GetItemsForMenuService' )
+
+                    @foreach($menus->getMenu() as $menu)
+                        <li class="menu-item"><a href="{{route('food', $menu->key)}}"><i class="po {{$menu->icon}}"></i>{{$menu->name}}</a></li>
+                    @endforeach
+
                         </ul>
                     </div>
                 </nav>
@@ -164,13 +164,13 @@
             </div>
 
 
-            @inject ('menus', '\App\Services\GetItemsForMenuService' )
+
             <div class="pizzaro-secondary-navigation">
                 <nav class="secondary-navigation"  aria-label="Secondary Navigation">
                     <ul  class="menu">
 
                         @foreach($menus->getMenu() as $menu)
-                        <li class="menu-item"><a href="{{route('food')}}"><i class="po {{$menu->icon}}"></i>{{$menu->name}}</a></li>
+                        <li class="menu-item"><a href="{{route('food', $menu->key)}}"><i class="po {{$menu->icon}}"></i>{{$menu->name}}</a></li>
                         @endforeach
 
                     </ul>
