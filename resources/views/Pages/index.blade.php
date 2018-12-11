@@ -787,7 +787,7 @@
         <form action="{{route('mail-subscribed')}}" method="POST">
             @csrf
             <div class="newsletter-form">
-                <input type="email" placeholder="Ведите свой e-mail">
+                <input type="email" name="email" placeholder="Ведите свой e-mail">
                 <button class="button" type="submit">Подписаться</button>
             </div>
         </form>
