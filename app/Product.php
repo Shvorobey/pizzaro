@@ -5,12 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Menu extends Model
+class Product extends Model
 {
     use SoftDeletes;
 
-    public function products()
+    public function items ()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Item::class);
     }
 }

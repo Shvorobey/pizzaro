@@ -9,9 +9,13 @@
 namespace App\Services;
 
 use App\SocialNetworks;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 final class GetSocialNetworks
+
+
 {
+    use SoftDeletes;
     public function getSocialNetworks()
     {
         return SocialNetworks::all();

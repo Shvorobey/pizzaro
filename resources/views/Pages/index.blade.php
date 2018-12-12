@@ -1,7 +1,7 @@
 
 @extends ('layout')
 
-@section ('body-classes','page-template-template-homepage-v1 home-v1')
+@section ('body-classes','full-width grid-view columns-3 archive woocommerce-page dark')
 
 @section('content')
 

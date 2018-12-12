@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('pages.index');
 })-> name ('home');
 
-Route::get('/food/{key}', function ($key) {
-    return view('pages.shop-grid-3-column');
-})->name ('food');
+Route::get('/food/{key}', '\\' . \App\Http\Controllers\ProductsAction::class)->name ('food');
 
 Route::post('/mail-subscribed', function (\Illuminate\Http\Request $request) {
 

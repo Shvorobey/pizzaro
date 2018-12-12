@@ -19,6 +19,7 @@ class CreateSocialNetworksTable extends Migration
             $table->string('key');
             $table->string('icon');
             $table->smallInteger('order');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
