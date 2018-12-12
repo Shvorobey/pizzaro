@@ -6,11 +6,11 @@
             <div class="footer-social-icons">
                 <span class="social-icon-text">Follow us</span>
                 <ul class="social-icons list-unstyled">
-                    <li><a class="fa fa-facebook" href="https://www.facebook.com/"></a></li>
-                    <li><a class="fa fa-twitter" href="ttps://twitter.com"></a></li>
-                    <li><a class="fa fa-instagram" href="https://www.instagram.com"></a></li>
-                    <li><a class="fa fa-youtube" href="https://www.youtube.com"></a></li>
-                    <li><a class="fa fa-dribbble" href="https://dribbble.com/"></a></li>
+                    @inject ('networks', '\App\Services\GetSocialNetworks' )
+
+                    @foreach($networks->getSocialNetworks() as $network)
+                        <li><a class="fa {{$network->icon}}" href="{{$network->key}}"></a></li>
+                    @endforeach
                 </ul>
             </div>
 
