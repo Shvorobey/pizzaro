@@ -10,13 +10,13 @@
         <div class="col-full">
             <div class="pizzaro-sorting">
                 <div class="food-type-filter">
-                    <div class="clear-food-type-filter chosen"><a href="#">Show All</a>
+                    <div class="clear-food-type-filter chosen"><a href="#">Все</a>
                     </div>
                     <div class="widget woocommerce widget_layered_nav">
                         <ul>
-                            <li class="wc-layered-nav-term "><a href="#">Meat</a> <span class="food-type-icon"><i class="fa fa-cutlery"></i></span></li>
-                            <li class="wc-layered-nav-term "><a href="#">Spicy</a> <span class="food-type-icon"><i class="fa fa-fire"></i></span></li>
-                            <li class="wc-layered-nav-term "><a href="#">Veg</a> <span class="food-type-icon"><i class="po po-veggie-icon"></i></span></li>
+                            <li class="wc-layered-nav-term "><a href="#">Мясные</a> <span class="food-type-icon"><i class="fa fa-cutlery"></i></span></li>
+                            <li class="wc-layered-nav-term "><a href="#">Со специями</a> <span class="food-type-icon"><i class="fa fa-fire"></i></span></li>
+                            <li class="wc-layered-nav-term "><a href="#">Вегитарианские</a> <span class="food-type-icon"><i class="po po-veggie-icon"></i></span></li>
                         </ul>
                     </div>
                     <div class="create-your-own"><a href="single-product-v3.html">Конструктор пиццы</a></div>
@@ -85,9 +85,15 @@
                             <li><a class="next page-numbers" href="{{$products->previousPageUrl()}}"> < </a></li>
                             @endif
 
+                            @if ($products->count ()>0)
                                 @for ($count=1; $count<=$products->lastPage(); $count++)
                                 <li><a class="page-numbers @if ($count==$products->currentPage()) current @endif" href="?page={{$count}}">{{$count}}</a></li>
+
                                 @endfor
+
+                                @else
+                                    <h1> <font size="15" color="aqua" face="Arial"> Мы работаем над тем, чтобы здесь что-то появилось ;) </font> </h1>
+                                @endif
                                 @if ($products->currentPage() != $products->lastPage())
                                 <li><a class="next page-numbers" href="{{$products->nextPageUrl()}}"> > </a></li>
                                 <li><a class="next page-numbers" href="?page={{$products->lastPage()}}">Последняя страница</a></li>

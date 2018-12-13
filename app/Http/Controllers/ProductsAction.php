@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,10 @@ class ProductsAction extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, $key)
     {
-        $products = Product::withoutTrashed () -> paginate (6);
+        $menu=Menu::where ('key', $key)->first ();
+        $products = $menu->products () -> paginate (6);
         return view('pages/shop-grid-3-column', ['products'=>$products]);
     }
 }
