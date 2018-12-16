@@ -48,18 +48,20 @@
                                                             <h3><span>Выберите размер</span></h3>
 
                                                             @foreach($product->items as $item)
+                                                                <a href="{{route('add-to-cart', $item->id)}}">
                                                             <div class="ywapo_input_container ywapo_input_container_radio">
 
                                                                 <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">{{$item->size}} {{$item->dimension}}</span></span>
                                                                 <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">цена:</span>{{$item->price}}</span></span>
                                                             </div>
+                                                                </a>
                                                             @endforeach
 
                                                         </div>
                                                     </div>
                                                 </a>
                                                 <div class="hover-area">
-                                                    <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Добавить</a>
+                                                    <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Подробнее</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,13 +100,7 @@
                                 <li><a class="next page-numbers" href="{{$products->nextPageUrl()}}"> > </a></li>
                                 <li><a class="next page-numbers" href="?page={{$products->lastPage()}}">Последняя страница</a></li>
                                 @endif
-
-                            {{--<li><span class="page-numbers current">1</span></li>--}}
-
-                            {{--<li><a class="page-numbers" href="#">3</a></li>--}}
-
-                        {{--</ul>--}}
-                    {{--</nav>--}}
+                        </ul>
                 </main>
                 <!-- #main -->
             </div>

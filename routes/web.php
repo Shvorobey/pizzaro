@@ -34,3 +34,7 @@ Route::post('/mail-subscribed', function (\Illuminate\Http\Request $request) {
     return view('pages.mail-subscribed');
 })->name ('mail-subscribed');
 
+Route::get('/cart/add_to_cart/{id}', '\\' . \App\Http\Controllers\AddToCartAction::class)->name ('add-to-cart');
+
+Route::get('/cart', '\\' . \App\Http\Controllers\ShowCartAction::class)->name ('cart');
+
