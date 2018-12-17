@@ -147,14 +147,14 @@
                     </div>
                     <ul class="site-header-cart-v2 menu">
                         <li class="cart-content ">
-                            <a href="cart.html" title="View your shopping cart">
+                            <a href="cart.html" title="Перейти к заказу">
                                 <i class="po po-scooter"></i>
                                 <span><strong> Перейти к заказу </strong></span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="cart.html" title="View your shopping cart">
-                                        <span class="count">2 items</span> <span class="amount">$50.00</span>
+                                    <a href="cart.html" title="Показать корзину">
+                                        <span class="count">{{$totalitems}} ед.</span>  <span class="amount">{{$total}} грн.</span>
                                     </a>
                                 </li>
                             </ul>
