@@ -94,7 +94,7 @@
 
                                                 <div class="wc-proceed-to-checkout">
                                                     <a href="{{route('cart')}}"  type="submit" class="button" name="update_cart" value="Обновить корзину"> Обновить корзину </a>
-                                                    <a href="checkout.html" class="checkout-button button alt wc-forward">Оформить заказ</a>
+                                                    <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">Оформить заказ</a>
                                                 </div>
                                                 <input type="hidden" id="_wpnonce" name="_wpnonce" value="21ca9d92f8" /><input type="hidden" name="_wp_http_referer" value="/pizzaro/cart/" />
                                             </td>
@@ -120,7 +120,7 @@
                                             </tr>
                                         </table>
                                         <div class="wc-proceed-to-checkout">
-                                            <a href="checkout.html" class="checkout-button button alt wc-forward">Proceed to Checkout</a>
+                                            <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">Proceed to Checkout</a>
                                         </div>
                                     </div>
                                 </div>

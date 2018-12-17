@@ -38,3 +38,5 @@ Route::get('/cart/add_to_cart/{id}', '\\' . \App\Http\Controllers\AddToCartActio
 
 Route::get('/cart', '\\' . \App\Http\Controllers\ShowCartAction::class)->name ('cart');
 
+Route::get('/cart/checkout', '\\' . \App\Http\Controllers\ShowCheckoutAction::class)->name ('checkout');
+
