@@ -18,6 +18,13 @@ class ProductsAction extends Controller
     {
         $menu=Menu::where ('key', $key)->first ();
         $products = $menu->products () -> paginate (6);
-        return view('pages/shop-grid-3-column', ['products'=>$products]);
+
+        $items = session()->get('cart');
+        $total = 0;
+        $totalitems=0;
+        foreach ($items as $item) {
+            $total += $item->price;
+            $totalitems++;
+        }        return view('pages/shop-grid-3-column', ['products'=>$products, 'items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
     }
 }

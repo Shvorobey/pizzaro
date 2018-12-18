@@ -17,6 +17,7 @@ class ShowCartAction extends Controller
         $items = session()->get('cart');
         $total = 0;
         $totalitems=0;
+
         foreach ($items as $item){
             $total += $item->price;
             $totalitems++;
