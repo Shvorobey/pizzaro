@@ -33,12 +33,12 @@
                                     <div class="product-outer">
                                         <div class="product-inner">
                                             <div class="product-image-wrapper">
-                                                <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                                <a href="{{route('single-product', $product->id)}}" class="woocommerce-LoopProduct-link">
                                                     <img src="{{$product->image}}" class="img-responsive" alt="">
                                                 </a>
                                             </div>
                                             <div class="product-content-wrapper">
-                                                <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                                <a href="{{route('single-product', $product->id)}}" class="woocommerce-LoopProduct-link">
                                                     <h3>{{$product->name}}</h3>
                                                     <div itemprop="description">
                                                         <p style="max-height: none;">{{$product->description}}</p>

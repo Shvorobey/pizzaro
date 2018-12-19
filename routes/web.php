@@ -27,6 +27,8 @@ Route::get('/', function () {
 
 Route::get('/food/{key}', '\\' . \App\Http\Controllers\ProductsAction::class)->name ('food');
 
+Route::get('/single_product/{id}', '\\' . \App\Http\Controllers\SingleProductAction::class)->name ('single-product');
+
 Route::post('/mail-subscribed', function (\Illuminate\Http\Request $request) {
 
     $subscriber = new \App\Subscriber();
