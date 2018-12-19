@@ -42,7 +42,7 @@
                               <ul class="woocommerce-thankyou-order-details order_details">
                                  {{--<li class="order">Order Number:<strong>645</strong></li>--}}
                                  {{--<li class="date">Date:<strong>February 2, 2017</strong></li>--}}
-                                 <li class="total">К оплате:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$total}} грн.</span></strong></li>
+                                 {{--<li class="total">К оплате:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$total}} грн.</span></strong></li>--}}
                                  {{--<li class="method">Payment Method:<strong>Direct Bank Transfer</strong></li>--}}
                               </ul>
                               <div class="clear"></div>
@@ -55,6 +55,7 @@
                                        <th class="product-total">Цена</th>
                                     </tr>
                                  </thead>
+                                  @if (($items != null))
                                   @foreach($items as $item)
                                  <tbody>
                                     <tr class="order_item">
@@ -71,6 +72,9 @@
                                     </tr>
                                  </tbody>
                                   @endforeach
+                                  @else
+                                      <h3>В Вашей корзине нет заказов</h3>
+                                  @endif
                                  <tfoot>
                                     <tr>
                                        <th scope="row">К оплате:</th>
@@ -90,7 +94,7 @@
                                        {{--<td><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.90</span></td>--}}
                                     {{--</tr>--}}
                                  </tfoot>
-                              {{--</table>--}}
+                              </table>
                               {{--<header>--}}
                                  {{--<h2>Customer Details</h2>--}}
                               {{--</header>--}}

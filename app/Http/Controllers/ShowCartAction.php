@@ -18,9 +18,11 @@ class ShowCartAction extends Controller
         $total = 0;
         $totalitems=0;
 
-        foreach ($items as $item){
-            $total += $item->price;
-            $totalitems++;
+        if ($items != null) {
+            foreach ($items as $item) {
+                $total += $item->price;
+                $totalitems++;
+            }
         }
         return view('pages.cart', ['items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
     }

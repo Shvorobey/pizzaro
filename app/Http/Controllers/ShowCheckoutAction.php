@@ -17,9 +17,11 @@ class ShowCheckoutAction extends Controller
         $items = session()->get('cart');
         $total = 0;
         $totalitems=0;
-        foreach ($items as $item){
-            $total += $item->price;
-            $totalitems++;
+        if ($items != null) {
+            foreach ($items as $item) {
+                $total += $item->price;
+                $totalitems++;
+            }
         }
         return view('pages.checkout', ['items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
     }

@@ -106,22 +106,26 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($items as $item)
-                                            <tr class="cart_item">
-                                                <td class="product-name">
-                                                    {{$item->product->name}}&nbsp;<strong class="product-quantity">&times; 1</strong>
-                                                    <dl class="variation">
-                                                        <dt class="variation-Baseprice">Цена:</dt>
-                                                        <dd class="variation-Baseprice">
-                                                            <p><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span></p>
-                                                        </dd>
-                                                        <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">Количество (размер):
-                                                        </dt>
-                                                        <dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
-                                                            <p>{{$item->size}}  {{$item->dimension}}</p>
-                                                        </dd>
-                                                    </dl>
-                                                    @endforeach
+                                                    @if (($items != null))
+                                                        @foreach($items as $item)
+                                                        <tr class="cart_item">
+                                                            <td class="product-name">
+                                                                {{$item->product->name}}&nbsp;<strong class="product-quantity">&times; 1</strong>
+                                                                <dl class="variation">
+                                                                    <dt class="variation-Baseprice">Цена:</dt>
+                                                                    <dd class="variation-Baseprice">
+                                                                        <p><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span></p>
+                                                                    </dd>
+                                                                    <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">Количество (размер):
+                                                                    </dt>
+                                                                    <dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
+                                                                        <p>{{$item->size}}  {{$item->dimension}}</p>
+                                                                    </dd>
+                                                                </dl>
+                                                                @endforeach
+                                                    @else
+                                                        <h3>В Вашей корзине нет заказов</h3>
+                                                    @endif
                                                 </td>
 
                                             </tbody>

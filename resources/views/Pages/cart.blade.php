@@ -45,7 +45,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-
+                                    @if (($items != null))
                                         @foreach($items as $item)
                                         <tr class="cart_item">
                                             <td class="product-remove">
@@ -81,8 +81,10 @@
                                                 <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>25.90</span>
                                             </td>
                                         </tr>
-                                        @endforeach
-
+                                            @endforeach
+                                        @else
+                                                <h3>В Вашей корзине нет заказов</h3>
+                                        @endif
                                         <tr>
                                             <td colspan="6" class="actions">
                                                 <div class="coupon">

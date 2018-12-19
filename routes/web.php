@@ -12,13 +12,15 @@
 */
 
 Route::get('/', function () {
+
     $items = session()->get('cart');
     $total = 0;
     $totalitems=0;
-
-    foreach ($items as $item){
-        $total += $item->price;
-        $totalitems++;
+    if ($items != null) {
+        foreach ($items as $item) {
+            $total += $item->price;
+            $totalitems++;
+        }
     }
     return view('pages.index', ['items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
 })-> name ('home');
@@ -49,13 +51,16 @@ Route::get('/cart', '\\' . \App\Http\Controllers\ShowCartAction::class)->name ('
 Route::get('/cart/checkout', '\\' . \App\Http\Controllers\ShowCheckoutAction::class)->name ('checkout');
 
 Route::get('/order_reseived', function () {
+    $items = [];
     $items = session()->get('cart');
     $total = 0;
     $totalitems=0;
 
-    foreach ($items as $item){
-        $total += $item->price;
-        $totalitems++;
+    if ($items != null) {
+        foreach ($items as $item) {
+            $total += $item->price;
+            $totalitems++;
+        }
     }
     return view('pages.order', ['items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
 })-> name ('order');
