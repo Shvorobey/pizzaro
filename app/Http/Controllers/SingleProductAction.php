@@ -19,6 +19,7 @@ class SingleProductAction extends Controller
         $products=Product::where ('id', $id)->first ();
         $items = $products->items ();
 
+
         $items = session()->get('cart');
         $total = 0;
         $totalitems=0;

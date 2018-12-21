@@ -9,8 +9,8 @@
             <div class="pizzaro-breadcrumb">
                 <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
                     <a href="{{route('home')}}">Главная</a><span class="delimiter"><i class="po po-arrow-right-slider"></i></span>
-                    <a href="shop-grid-4-column.html">Pizza</a>
-                    <span class="delimiter"><i class="po po-arrow-right-slider"></i></span>Hawaii Vegetarian Pizza
+                    <a href="#">Pizza</a>
+                    <span class="delimiter"><i class="po po-arrow-right-slider"></i></span>{{$product->name}}
                 </nav>
             </div>
             <!-- /.woocommerce-breadcrumb -->
@@ -20,7 +20,7 @@
                         <div class="single-product-wrapper">
                             <div class="product-images-wrapper">
                                 <div class="images">
-                                    <a href="assets/images/single-product/1.jpg" itemprop="image" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto[product-gallery]">
+                                    <a href="{{$product->image}}" itemprop="image" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto[product-gallery]">
                                         <img width="600" height="600" src="{{$product->image}}" class="attachment-shop_single size-shop_single wp-post-image" alt=""/>
                                     </a>
                                 </div>
@@ -43,11 +43,11 @@
                                 </div>
                                 <!-- AddToAny END -->
                                 <div class="thumbnails columns-4">
-                                    <a href="assets/images/single-product/1.jpg" class="zoom first" title="" data-rel="prettyPhoto[product-gallery]">
-                                        <img width="180" height="180" src="assets/images/single-product/1.jpg" class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
+                                    <a href="{{$product->image}}" class="zoom first" title="" data-rel="prettyPhoto[product-gallery]">
+                                        <img width="180" height="180" src="{{$product->image}}" class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
                                     </a>
-                                    <a href="assets/images/single-product/2.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
-                                        <img width="180" height="180" src="assets/images/single-product/2.jpg" class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
+                                    <a href="{{$product->image}}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
+                                        <img width="180" height="180" src="{{$product->image}}" class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
                                     </a>
                                 </div>
                             </div>
@@ -55,67 +55,45 @@
                         </div>
                         <!-- /.single-product-wrapper -->
                         <div class="product-form-wrapper">
-                            {{--<div class="delivery-time">Delivery: <span>35 minutes</span></div>--}}
-                            {{--<form class="variations_form cart"  enctype='multipart/form-data' data-product_id="116" data-product_variations="[{&quot;variation_id&quot;:117,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:41.9,&quot;display_regular_price&quot;:41.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Double Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;41.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:118,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thin Crust without sause&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:119,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:40.9,&quot;display_regular_price&quot;:40.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thick Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;40.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:120,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Original Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:121,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:49.9,&quot;display_regular_price&quot;:49.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Medium - 29cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;49.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:122,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:59.9,&quot;display_regular_price&quot;:59.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Large - 35cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;59.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;}]">--}}
+
+                            <form class="variations_form cart"  enctype='multipart/form-data' data-product_id="116" data-product_variations="[{&quot;variation_id&quot;:117,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:41.9,&quot;display_regular_price&quot;:41.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Double Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;41.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:118,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thin Crust without sause&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:119,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:40.9,&quot;display_regular_price&quot;:40.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thick Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;40.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:120,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Original Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:121,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:49.9,&quot;display_regular_price&quot;:49.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Medium - 29cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;49.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:122,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:59.9,&quot;display_regular_price&quot;:59.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Large - 35cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;59.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;}]">
+
                                 <table class="variations" >
-                                    {{--<tbody>--}}
-                                    {{--<tr>--}}
-                                        {{--<td class="label"><label for="select-crust">Select Crust</label></td>--}}
-                                        {{--<td class="value">--}}
-                                            {{--<select id="select-crust" class="" name="attribute_select-crust" data-attribute_name="attribute_select-crust">--}}
-                                                {{--<option value="">Choose an option</option>--}}
-                                                {{--<option value="Original Crust" >Original Crust</option>--}}
-                                                {{--<option value="Thick Crust" >Thick Crust</option>--}}
-                                                {{--<option value="Thin Crust without sause" >Thin Crust without sause</option>--}}
-                                                {{--<option value="Double Crust" >Double Crust</option>--}}
-                                            {{--</select>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                    {{--<tr>--}}
-                                        {{--<td class="label"><label for="select-size">Select Size</label></td>--}}
-                                        {{--<td class="value">--}}
-                                            {{--<div class="ywapo_input_container ywapo_input_container_radio">--}}
-                                                {{--<input data-typeid="3" data-price="19.9" data-pricetype="fixed" data-index="0" type="radio" name="ywapo_radio_3[]" value="0" required checked class="ywapo_input ywapo_input_radio ywapo_price_fixed"   />--}}
-                                                {{--<label class="ywapo_label_tag_position_after">--}}
-                                                    {{--<span class="ywapo_option_label ywapo_label_position_after">22  cm</span>--}}
-                                    <div class="ywapo_input_container ywapo_input_container_radio">
-                                        <input data-typeid="3" data-price="19.9" data-pricetype="fixed" data-index="0" type="radio" name="ywapo_radio_3[]" value="0" required checked class="ywapo_input ywapo_input_radio ywapo_price_fixed"   />
-                                        <label class="ywapo_label_tag_position_after">
-                                            <span class="ywapo_option_label ywapo_label_position_after">22  cm</span>
+                                    <tbody>
 
-                                        </label>
-                                        <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>19.90</span></span>
-                                    </div>
-                                    <div class="ywapo_input_container ywapo_input_container_radio">
-                                        <input data-typeid="3" data-price="25.9" data-pricetype="fixed" data-index="1" type="radio" name="ywapo_radio_3[]" value="1" required  class="ywapo_input ywapo_input_radio ywapo_price_fixed"   />
-                                        <label class="ywapo_label_tag_position_after">
-                                            <span class="ywapo_option_label ywapo_label_position_after">29  cm</span>
+                                    <tr>
+                                        <td class="label"><label for="select-size"></label></td>
+                                        @foreach($product->items as $item)
+                                        <td class="value">
+                                            <a href="{{route('add-to-cart', $item->id)}}">
+                                                <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                        </label>
-                                        <span class="ywapo_label_price"> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span></span>
-                                    </div>
-                                                {{--</label>--}}
-                                                {{--<span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>19.90</span></span>--}}
-                                            {{--</div>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                    {{--</tbody>--}}
+                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">{{$item->size}} {{$item->dimension}}</span></span>
+                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span></span>
+                                                </div>
+                                            </a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
                                 </table>
-                                <div class="single_variation_wrap">
-                                    <div class="woocommerce-variation single_variation"></div>
-                                    <div class="woocommerce-variation-add-to-cart variations_button">
-                                        <div class="qty-btn">
-                                            <label>Quantity</label>
-                                            <div class="quantity">
-                                                <input type="number" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"/>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
-                                        <input type="hidden" name="add-to-cart" value="116" />
-                                        <input type="hidden" name="product_id" value="116" />
-                                        <input type="hidden" name="variation_id" class="variation_id" value="0" />
-                                    </div>
-                                </div>
+                                {{--<div class="single_variation_wrap">--}}
+                                    {{--<div class="woocommerce-variation single_variation"></div>--}}
+                                    {{--<div class="woocommerce-variation-add-to-cart variations_button">--}}
+                                        {{--<div class="qty-btn">--}}
+
+                                            {{--<label>Количество</label>--}}
+                                            {{--<div class="quantity">--}}
+                                                {{--<input type="number" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"/>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<button type="submit" class="single_add_to_cart_button button alt">+</button>--}}
+                                        {{--<input type="hidden" name="add-to-cart" value="116" />--}}
+                                        {{--<input type="hidden" name="product_id" value="116" />--}}
+                                        {{--<input type="hidden" name="variation_id" class="variation_id" value="0" />--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </form>
                         </div>
                         <!-- /.product-images-wrapper -->

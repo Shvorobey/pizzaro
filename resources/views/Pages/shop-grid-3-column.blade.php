@@ -61,7 +61,7 @@
                                                     </div>
                                                 </a>
                                                 <div class="hover-area">
-                                                    <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Подробнее</a>
+                                                    <a rel="nofollow" href="{{route('single-product', $product->id)}}" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Подробнее</a>
                                                 </div>
                                             </div>
                                         </div>

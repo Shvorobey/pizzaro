@@ -13,4 +13,8 @@ class Product extends Model
     {
         return $this->hasMany(Item::class);
     }
+    public function menus ()
+    {
+        return $this->belongsTo(Menu::class);
+    }
 }

@@ -67,3 +67,7 @@ Route::get('/order_reseived', function () {
     return view('pages.order', ['items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
 })-> name ('order');
 
+Route::get('/', function () {
+
+    return view('pages.blog');
+})-> name ('blog');
