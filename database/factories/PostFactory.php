@@ -7,5 +7,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'title' => $faker->text(40),
         'body' => $faker->text (999),
         'cover' => $faker->imageUrl(1619, 827),
+        'user_id'=> 1,
     ];
 });

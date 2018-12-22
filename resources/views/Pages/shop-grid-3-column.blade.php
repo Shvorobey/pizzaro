@@ -101,6 +101,7 @@
                                 <li><a class="next page-numbers" href="?page={{$products->lastPage()}}">Последняя страница</a></li>
                                 @endif
                         </ul>
+                    </nav>
                 </main>
                 <!-- #main -->
             </div>

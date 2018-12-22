@@ -227,16 +227,16 @@
                         <!-- #post-## -->
                     </div>
                     <!-- /.posts -->
-                    <nav id="post-navigation" class="navigation pagination"  aria-label="Post Navigation">
-                        <span class="screen-reader-text">Posts navigation</span>
-                        <div class="nav-links">
-                            <ul class='page-numbers'>
-                                <li><span class='page-numbers current'>1</span></li>
-                                <li><a class='page-numbers' href='#'>2</a></li>
-                                <li><a class="next page-numbers" href="#">Next Page &nbsp;&nbsp;&nbsp;&rarr;</a></li>
-                            </ul>
-                        </div>
-                    </nav>
+                    {{--<nav id="post-navigation" class="navigation pagination"  aria-label="Post Navigation">--}}
+                        {{--<span class="screen-reader-text">Posts navigation</span>--}}
+                        {{--<div class="nav-links">--}}
+                            {{--<ul class='page-numbers'>--}}
+                                {{--<li><span class='page-numbers current'>1</span></li>--}}
+                                {{--<li><a class='page-numbers' href='#'>2</a></li>--}}
+                                {{--<li><a class="next page-numbers" href="#">Next Page &nbsp;&nbsp;&nbsp;&rarr;</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</nav>--}}
                 </main>
                 <!-- #main -->
             </div>
@@ -361,6 +361,33 @@
                     </ul>
                 </div>
             </div>
+
+            <nav class="woocommerce-pagination">
+                <ul class="page-numbers">
+                    @if ($posts->currentPage()!=1)
+                        <li><a class="next page-numbers" href="?page=1">Первая страница</a></li>
+                        <li><a class="next page-numbers" href="{{$posts->previousPageUrl()}}"> < </a></li>
+                    @endif
+
+                    @if ($posts->count ()>0)
+                        @for ($count=1; $count<=$posts->lastPage(); $count++)
+                            <li><a class="page-numbers @if ($count==$posts->currentPage()) current @endif" href="?page={{$count}}">{{$count}}</a></li>
+
+                        @endfor
+
+                    @else
+                        <h1> <font size="15" color="aqua" face="Arial"> Мы работаем над тем, чтобы здесь что-то появилось ;) </font> </h1>
+                    @endif
+                    @if ($posts->currentPage() != $posts->lastPage())
+                        <li><a class="next page-numbers" href="{{$posts->nextPageUrl()}}"> > </a></li>
+                        <li><a class="next page-numbers" href="?page={{$posts->lastPage()}}">Последняя страница</a></li>
+                    @endif
+                </ul>
+            </nav>
+
+
+
+
             <!-- #secondary -->
         </div>
         <!-- .col-full -->
