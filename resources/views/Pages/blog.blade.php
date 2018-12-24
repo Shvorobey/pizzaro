@@ -39,6 +39,7 @@
                                  </span>
                                     <div class="author">
                                         <div class="label">Автор:</div>
+                                        {{----}}
                                         <a href="{{route('posts-by-autor', $post->user->id )}}" title="Posts by {{$post->user->name}}" rel="author">{{$post->user->name}}</a>
                                     </div>
                                 </div>

@@ -59,50 +59,50 @@
                     </div>
                 </main>
             </div>
-                            <div id="secondary" class="widget-area" role="complementary">
-                                <div id="pizzaro_about_widget-2" class="widget pizzaro_about_widget">
-                                    <div class="about-image">
-                                        <img alt="" class="featured-image" src="assets/images/sidebar-about-1.jpg">
-                                        <img alt="" class="logo" src="assets/images/sidebar-about-2.png">
-                                    </div>
-                                    <div class="about-info">
-                                        <h2>Welcome</h2>
-                                        <p>Cras convallis nisl sit amet commodo molestie. Donec gravida, sem et ornare fringilla, metus dui aliquet est, gravida.</p>
-                                        <ul class="social-icons list-inline">
-                                            <li><a class="fa fa-facebook" href="#"></a></li>
-                                            <li><a class="fa fa-twitter" href="#"></a></li>
-                                            <li><a class="fa fa-instagram" href="#"></a></li>
-                                            <li><a class="fa fa-youtube" href="#"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div id="search-2" class="widget widget_search">
-                                    <form role="search" method="get" class="search-form" action="blog-single.html">
-                                        <label>
-                                            <span class="screen-reader-text">Search for:</span>
-                                            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
-                                        </label>
-                                        <input type="submit" class="search-submit" value="Search" />
-                                    </form>
-                                </div>
-                            </div>
+            <div id="secondary" class="widget-area" role="complementary">
+                <div id="pizzaro_about_widget-2" class="widget pizzaro_about_widget">
+                    <div class="about-image">
+                        <img alt="" class="featured-image" src="assets/images/sidebar-about-1.jpg">
+                        <img alt="" class="logo" src="assets/images/sidebar-about-2.png">
+                    </div>
+                    <div class="about-info">
+                        <h2>Welcome</h2>
+                        <p>Cras convallis nisl sit amet commodo molestie. Donec gravida, sem et ornare fringilla, metus dui aliquet est, gravida.</p>
+                        <ul class="social-icons list-inline">
+                            <li><a class="fa fa-facebook" href="#"></a></li>
+                            <li><a class="fa fa-twitter" href="#"></a></li>
+                            <li><a class="fa fa-instagram" href="#"></a></li>
+                            <li><a class="fa fa-youtube" href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="search-2" class="widget widget_search">
+                    <form role="search" method="get" class="search-form" action="blog-single.html">
+                        <label>
+                            <span class="screen-reader-text">Search for:</span>
+                            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+                        </label>
+                        <input type="submit" class="search-submit" value="Search" />
+                    </form>
+                </div>
+            </div>
         </div>
 
-@endsection
+            @endsection
 
 
-@section ('subscribed')
-<section class="newsletter-subscription stretch-full-width"  style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/26.jpg ); height: 460px;">
-    <div class="caption">
-        <h3 class="title">Подписаться на рассылку</h3>
-        <span class="marketing-text">Подпишитесь на нашу рассылку! <br> Горячие предложения и промокоды. </span>
-        <form action="{{route('mail-subscribed')}}" method="POST">
-            @csrf
-            <div class="newsletter-form">
-                <input type="email" name="email" placeholder="Ведите свой e-mail">
-                <button class="button" type="submit">Подписаться</button>
-            </div>
-        </form>
-    </div>
-</section>
+            @section ('subscribed')
+                <section class="newsletter-subscription stretch-full-width"  style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/26.jpg ); height: 460px;">
+                    <div class="caption">
+                        <h3 class="title">Подписаться на рассылку</h3>
+                        <span class="marketing-text">Подпишитесь на нашу рассылку! <br> Горячие предложения и промокоды. </span>
+                        <form action="{{route('mail-subscribed')}}" method="POST">
+                            @csrf
+                            <div class="newsletter-form">
+                                <input type="email" name="email" placeholder="Ведите свой e-mail">
+                                <button class="button" type="submit">Подписаться</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
 @endsection
