@@ -18,6 +18,7 @@ class SingleProductAction extends Controller
     {
         $products=Product::where ('id', $id)->first ();
         $items = $products->items ();
+        $menus = $products->menus ();
 
 
         $items = session()->get('cart');
@@ -28,6 +29,6 @@ class SingleProductAction extends Controller
                 $total += $item->price;
                 $totalitems++;
             }
-        }        return view('pages/single-product', ['product'=>$products, 'items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
+        }        return view('pages/single-product', ['menus'=>$menus, 'product'=>$products, 'items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
     }
 }

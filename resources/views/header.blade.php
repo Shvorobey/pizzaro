@@ -115,7 +115,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="blog.html">Блог</a></li>
+                            <li class="menu-item"><a href="{{route('blog')}}">Блог</a></li>
                             <li class="menu-item"><a href="store-locator.html">Store Locator</a></li>
                         </ul>
                     </div>

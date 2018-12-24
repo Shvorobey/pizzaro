@@ -68,3 +68,5 @@ Route::get('/order_reseived', function () {
 })-> name ('order');
 
 Route::get('/blog', '\\' . \App\Http\Controllers\ShowPostsAction::class)-> name ('blog');
+
+Route::get('/blog/posts_by_autor/{id}', '\\' . \App\Http\Controllers\ShowPostsByAutor::class)-> name ('posts-by-autor');
