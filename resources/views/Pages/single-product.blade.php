@@ -9,7 +9,7 @@
             <div class="pizzaro-breadcrumb">
                 <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
                     <a href="{{route('home')}}">Главная</a><span class="delimiter"><i class="po po-arrow-right-slider"></i></span>
-                    <a href="{{route('food', $product->menus->key)}}">Пицца</a>
+                    <a href="{{route('food', $product->menu->key)}}">Пицца</a>
                     <span class="delimiter"><i class="po po-arrow-right-slider"></i></span>{{$product->name}}
                 </nav>
             </div>

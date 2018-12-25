@@ -20,6 +20,6 @@ class ShowPostsByCategory extends Controller
                 $total += $item->price;
                 $totalitems++;
             }
-        }        return view('pages/posts-by-category', ['category'=> $category, 'posts'=>$posts, 'total'=>$total, 'totalitems'=>$totalitems]);
+        }        return view('pages/posts-by-category', ['category'=> $category, 'total'=>$total, 'totalitems'=>$totalitems]);
     }
 }

@@ -30,12 +30,16 @@
                                         <a href="blog-single.html" rel="bookmark">{{$post->title}}</a>
                                     </h1>
                                     <div class="entry-meta">
-                                        <div class="cat-links">
-                                            <a href="blog-single.html" rel="category tag">Technology</a>
-                                        </div>
+                                        <div class="label">Категории:</div>
+                                        @foreach($post->categories as $category)
+                                            <div class="cat-links">
+                                                <a href="{{route('posts-by-category', $category->key)}}" rel="category tag">{{$category->categories}}</a>
+                                            </div>
+                                        @endforeach
                                         <span class="posted-on">
                                  <a href="blog-single.html" rel="bookmark">
-                                 <time class="entry-date published" datetime="2016-10-13T14:53:25+00:00">{{$post->created_at}}</time>
+                                     <div class="label">Создан:</div>
+                                 <time class="entry-date published" datetime="{{$post->created_at}}">{{$post->created_at}}</time>
                                  </a>
                                  </span>
                                         <div class="author">
@@ -46,17 +50,14 @@
                                 </header>
                                 <!-- .entry-header -->
                                 <div class="entry-content">
-                                    <p>{{$post->body}}</p>
+                                    <p>{{$post->short_body}} ...</p>
                                     <div class="post-readmore">
-                                        <a href="blog-single.html" class="read-more-text">Read More</a>
+                                        <a href="blog-single.html" class="read-more-text">Читать далее ...</a>
                                     </div>
-                                    <span class="comments-link">
-                              <a href="#">Leave a comment</a>
-                              </span>
                                 </div>
                             </article>
                         @endforeach
-                    </div>
+                    </div>deleted_at
                 </main>
             </div>
                             <div id="secondary" class="widget-area" role="complementary">

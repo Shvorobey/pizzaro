@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
-use App\Menu;
+use App\Post;
 use Illuminate\Http\Request;
 
-class SingleProductAction extends Controller
+class ShowSinglePost extends Controller
 {
     /**
      * Handle the incoming request.
@@ -16,10 +15,8 @@ class SingleProductAction extends Controller
      */
     public function __invoke(Request $request, $id)
     {
-        $products=Product::where ('id', $id)->first ();
-        $items = $products->items ();
-        $menus = $products->menu ();
-
+        $posts=Post::where ('id', $id)->first ();
+//        $posts = $user->posts ();
 
         $items = session()->get('cart');
         $total = 0;
@@ -29,6 +26,6 @@ class SingleProductAction extends Controller
                 $total += $item->price;
                 $totalitems++;
             }
-        }        return view('pages/single-product', ['menus'=>$menus, 'product'=>$products, 'items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
+        }        return view('pages/single-post', ['posts'=>$posts, 'total'=>$total, 'totalitems'=>$totalitems]);
     }
 }

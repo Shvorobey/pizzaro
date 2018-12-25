@@ -72,3 +72,5 @@ Route::get('/blog', '\\' . \App\Http\Controllers\ShowPostsAction::class)-> name 
 Route::get('/blog/posts_by_autor/{id}', '\\' . \App\Http\Controllers\ShowPostsByAutor::class)-> name ('posts-by-autor');
 
 Route::get('/blog/posts_by_category/{key}', '\\' . \App\Http\Controllers\ShowPostsByCategory::class)-> name ('posts-by-category');
+
+Route::get('/blog/single_post/{id}', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');

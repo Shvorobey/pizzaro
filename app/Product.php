@@ -13,7 +13,7 @@ class Product extends Model
     {
         return $this->hasMany(Item::class);
     }
-    public function menus ()
+    public function menu ()
     {
         return $this->belongsTo(Menu::class);
     }

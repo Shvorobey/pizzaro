@@ -15,7 +15,7 @@
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" >
                     <div class="posts">
-                        <h3>Все посты автора </h3><h1>{{$user->name}}</h1>
+                        <h3>Все посты категории </h3><h1>{{$$post->categories as $category}}</h1>
                         @foreach($user->posts as $post)
                             <article id="post-359" class="post-359 post type-post status-publish format-image has-post-thumbnail sticky hentry category-technology tag-event tag-festival tag-music tag-woocommerce post_format-post-format-image">
                                 <header class="entry-header">
@@ -48,11 +48,8 @@
                                 <div class="entry-content">
                                     <p>{{$post->body}}</p>
                                     <div class="post-readmore">
-                                        <a href="blog-single.html" class="read-more-text">Read More</a>
+                                        <a href="blog-single.html" class="read-more-text">Читать далее ...</a>
                                     </div>
-                                    <span class="comments-link">
-                              <a href="#">Leave a comment</a>
-                              </span>
                                 </div>
                             </article>
                         @endforeach
