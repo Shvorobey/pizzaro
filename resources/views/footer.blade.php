@@ -1,6 +1,4 @@
-
-
-<footer id="colophon" class="site-footer footer-v1" >
+<footer id="colophon" class="site-footer footer-v1" xmlns="http://www.w3.org/1999/html">
 
         <div class="col-full">
             <div class="footer-social-icons">
@@ -12,6 +10,7 @@
                         <li><a class="fa {{$network->icon}}" href="{{$network->key}}"></a></li>
                     @endforeach
                 </ul>
+                </span>
             </div>
 
 
