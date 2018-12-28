@@ -19,5 +19,6 @@ final class GetSocialNetworks
     public function getSocialNetworks()
     {
         return SocialNetworks::all();
+
     }
 }

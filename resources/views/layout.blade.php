@@ -20,12 +20,14 @@
     @include ('header')
 
     @yield ('content')
-    <!-- #content -->
 
+    <!-- #content -->
 
 @include ('random-food')
 
-@yield ('subscribed')
+
+
+{{--@yield ('subscribed')--}}
 
 @include ('footer')
 
