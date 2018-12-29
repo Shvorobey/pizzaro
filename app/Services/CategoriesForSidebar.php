@@ -5,7 +5,7 @@ namespace App\Services;
 
 use App\Category;
 
-class CategoriesForSidebar
+final class CategoriesForSidebar
 {
     public function show_categories()
     {

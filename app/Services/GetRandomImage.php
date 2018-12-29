@@ -1,21 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Admin
- * Date: 28.12.2018
- * Time: 17:28
- */
+
 
 namespace App\Services;
 
 
 use App\RandomImage;
-
+use SoftDeletes;
 class GetRandomImage
+
+
 {
-    use SoftDeletes;
+    public $randomImage;
+
     public function getRandomImage()
     {
-        return RandomImage::all();
+        $randomImage = RandomImage::inRandomOrder()->limit(6)->get();
+        return $randomImage;
     }
 }
