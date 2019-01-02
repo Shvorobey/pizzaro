@@ -26,13 +26,13 @@
                                     </div>
                                 </div>
                                 <h1 class="alpha entry-title">
-                                    <a href="{{route('single-post', $post->id)}}" rel="bookmark">{{$post->title}}</a>
+                                    <a href="{{route('single-post', $post->id)}}"  rel="bookmark"><p class="fun-hover">{{$post->title}} </p></a>
                                 </h1>
                                 <div class="entry-meta">
                                     <div class="label">Категории:</div>
                                     @foreach($post->categories as $category)
                                     <div class="cat-links">
-                                        <a href="{{route('posts-by-category', $category->key)}}" rel="category tag">{{$category->categories}}</a>
+                                        <a href="{{route('posts-by-category', $category->key)}}" class="fun-hover" rel="category tag">{{$category->categories}}</a>
                                     </div>
                                     @endforeach
                                     <span class="posted-on">

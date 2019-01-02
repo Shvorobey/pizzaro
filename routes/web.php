@@ -74,3 +74,5 @@ Route::get('/blog/posts_by_autor/{id}', '\\' . \App\Http\Controllers\ShowPostsBy
 Route::get('/blog/posts_by_category/{key}', '\\' . \App\Http\Controllers\ShowPostsByCategory::class)-> name ('posts-by-category');
 
 Route::get('/blog/single_post/{id}', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');
+
+//Route::get('pages/login-and-register', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');

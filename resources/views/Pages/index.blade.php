@@ -544,13 +544,14 @@
                 </div>
                 <div class="section-products">
                     <h2 class="section-title">Попробуйте сегодня</h2>
-                    @inject ('products', '\App\Services\RandomProductsService' )
 
-                    @foreach($products->getRandomProducts() as $product)
                     <div class="columns-4">
 
 
                         <ul class="products">
+                            @inject ('products', '\App\Services\RandomProductsService' )
+
+                            @foreach($products->getRandomProducts() as $product)
                             <li class="product @if ($loop->first) first @endif @if ($loop->last) last @endif">
                                 <div class="product-outer">
                                     <div class="product-inner">
@@ -562,24 +563,27 @@
                                         </div>
 
                                         <div class="product-content-wrapper">
-                                            <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                                <h3>Trio Cheese</h3>
+                                            <a href="{{route('single-product', $product->id)}}" class="woocommerce-LoopProduct-link">
+                                                <h3>{{$product->name}}</h3>
                                                 <div itemprop="description">
-                                                    <p style="max-height: none;">Extra-virgin olive oil, garlic, mozzarella, mushrooms and olives.</p>
+                                                    <p style="max-height: none;">{{$product->description}}</p>
                                                 </div>
                                                 <div  class="yith_wapo_groups_container">
                                                     <div  class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide " data-requested="1" data-type="radio" data-id="1" data-condition="">
-                                                        <h3><span>Pick Size</span></h3>
+                                                        <h3><span>Выберите размер</span></h3>
+                                                        @foreach($product->items as $item)
+                                                            <a href="{{route('add-to-cart', $item->id)}}">
                                                         <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                            <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
-                                                            <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>19</span></span>
+                                                            <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">{{$item->size}} {{$item->dimension}}</span></span>
+                                                            <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$item->price}}</span></span>
                                                         </div>
-                                                        <div class="ywapo_input_container ywapo_input_container_radio">
+                                                                @endforeach
+                                                        {{--<div class="ywapo_input_container ywapo_input_container_radio">--}}
 
-                                                            <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
-                                                            <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25</span></span>
-                                                        </div>
+                                                            {{--<span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>--}}
+                                                            {{--<span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25</span></span>--}}
+                                                        {{--</div>--}}
                                                     </div>
                                                 </div>
                                             </a>
