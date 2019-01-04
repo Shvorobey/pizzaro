@@ -62,8 +62,13 @@
                             <h1 style="display:none;">test</h1>
                             <div class="entry-content">
                                 <blockquote>
-                                    <p>Quisque a commodo lectus. Nunc vel dolor sed libero venenatis egestas. Cras non volutpat enim. Cras molestie purus id lorem sodales, in facilisis erat tristique. Aliquam luctus orci aliquet augue eleifend.</p>
-                                    <cite> Steve Kowalsky</cite>
+                                    @inject ('quote', 'App\Services\GetRandomQuoteService' )
+
+                                    @foreach($quote->getRandomQuote() as $quotes)
+
+                                    <p> {{$quotes->quote}} </p>
+                                    <cite> {{$quotes->autor_name}}</cite>
+                                        @endforeach
                                 </blockquote>
                             </div>
                             <!-- .entry-content -->
