@@ -75,4 +75,8 @@ Route::get('/blog/posts_by_category/{key}', '\\' . \App\Http\Controllers\ShowPos
 
 Route::get('/blog/single_post/{id}', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');
 
+Route::get('/admin/form', '\\' . \App\Http\Controllers\FormActionController::class)-> name ('form-action');
+
+Route::post('/admin/form', '\\' . \App\Http\Controllers\FormSaveActionController::class)-> name ('form-save-action');
+
 //Route::get('pages/login-and-register', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');
