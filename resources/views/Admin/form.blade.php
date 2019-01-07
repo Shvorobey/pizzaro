@@ -21,13 +21,13 @@
 
     <form action="" method="post" enctype="multipart/form-data">
     @csrf
-        Катеория продукта:<br>
+        <strong> Катеория продукта: </strong> <br>
         @foreach($menu as $m)
-            <input type="radio" name="menu" value="{{$m->id}}"> {{$m->name}} <br>
+            <input type="radio" name="menu" value="{{$m->id}}" @if ($m->id==old('menu', $product->menu_id)) checked="checked" @endif> {{$m->name}} <br>
         @endforeach
         <hr>
-        Название продукта:<br>
-        <input type="text" name="name" placeholder="Не более 150 символов" /><br>
+        <strong>Название продукта:</strong> <br>
+        <input type="text" name="name" placeholder="Не более 150 символов" value="{{old ('name', $product->name )}}" /><br>
         @if ($errors->any('name'))
             <div class="alert alert-danger">
                 <ul>
@@ -38,7 +38,7 @@
             </div>
         @endif
         <hr>
-        Описание продукта:<textarea name="description" placeholder="Не менее 50 символов"></textarea><br>
+        <strong>Описание продукта:</strong> <textarea name="description" placeholder="Не менее 50 символов">{{old('description', $product->description)}}</textarea><br>
         @if ($errors->any('description'))
             <div class="alert alert-danger">
                 <ul>
@@ -49,7 +49,7 @@
             </div>
         @endif
         <hr>
-        Изображение продукта 370x330:<input type="file" name="image" /><br>
+        <strong>Изображение продукта </strong> <i>370x330</i><strong> :</strong><input type="file" name="image" /><br>
         @if ($errors->any('image'))
             <div class="alert alert-danger">
                 <ul>
