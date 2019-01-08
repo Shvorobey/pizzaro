@@ -19,12 +19,14 @@
 </head>
 <body id="top" class="@yield ('body-classes')">
 <div id="page" class="hfeed site">
-
+    {{--{{dd($product)}}--}}
     <form action="" method="post" enctype="multipart/form-data">
 @csrf
 <strong> Катеория продукта: </strong> <br>
+
 @foreach($menu as $m)
-    <input type="radio" name="menu" value="{{$m->id}}" @if ($m->id==old( $product->menu_id )) checked="checked" @endif> {{$m->name}} <br>
+
+    <input type="radio" name="menu" value="{{$m->id}}" @if ($m->id==old( 'menu', $product->menu_id )) checked="checked" @endif> {{$m->name}} <br>
 @endforeach
 <hr>
 <strong>Название продукта:</strong> <br>
@@ -50,7 +52,9 @@
     </div>
 @endif
 <hr>
-<strong>Изображение продукта </strong> <i>370x330</i><strong> :</strong><input type="file" name="image" /><br>
+<strong>Изображение продукта </strong> <i>370x330</i><strong> :</strong>
+        <input type="file" name="image" /><br>
+        <input type="hidden" name="id" value="{{old('id', $product->id)}}"/>
 @if ($errors->any('image'))
     <div class="alert alert-danger">
         <ul>
@@ -61,6 +65,7 @@
     </div>
 @endif
 <hr>
+
 <input type="submit" value="Сохранить"/>
 </form>
 </div>

@@ -23,7 +23,7 @@
     @csrf
         <strong> Катеория продукта: </strong> <br>
         @foreach($menu as $m)
-            <input type="radio" name="menu" value="{{$m->id}}" @if ($m->id==old('menu' )) checked="checked" @endif> {{$m->name}} <br>
+            <input type="radio" name="menu" value="{{$m->id}}" @if ($m->id==old('menu')) checked="checked" @endif> {{$m->name}} <br>
         @endforeach
         <hr>
         <strong>Название продукта:</strong> <br>

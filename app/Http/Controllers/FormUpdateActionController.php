@@ -15,12 +15,12 @@ class FormUpdateActionController extends Controller
         if ($request->method()=='POST')
         {
             $this->validate($request, [
-                'name'          => 'required | max: 150 | string | unique:products,name',
+                'name'          => 'required | max: 150 | string | unique:products,name' ,
                 'description'   => 'required | min: 30 | string',
-                'image'         => ' image | dimensions: min_width=370, min_height=330 |  file',
+                'image'         => 'image | dimensions: min_width=370, min_height=330 |  file',
             ]);
 
-            $product = new Product;
+            $product = Product::find ($request->input('id')) ;
             $product->name = $request->input('name');
             $product->description = $request->input('description');
             $product->menu_id = $request->input('menu');
@@ -35,9 +35,9 @@ class FormUpdateActionController extends Controller
         }
         else
         {
-            $product=Product::find ($request->get('id') );
+            $product=Product::find ($request->get('id'));
         }
-        return view('admin.form', ['menu'=>Menu::all(), 'product' => $product]);
+        return view('admin.form-update', ['menu'=>Menu::all(), 'product' => $product]);
     }
 
 }
