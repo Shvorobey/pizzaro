@@ -31,11 +31,8 @@ class FormSaveActionController extends Controller
                 }
                 $product->save();
             }
-            else
-                {
-                    $product=Product::find ($request->get('id') );
-                }
-        return view('admin.form', ['menu'=>Menu::all(), 'product' => $product]);
+
+        return view('admin/form-new', ['menu'=>Menu::all()]);
     }
 
 }

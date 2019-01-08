@@ -75,6 +75,9 @@ Route::get('/blog/posts_by_category/{key}', '\\' . \App\Http\Controllers\ShowPos
 
 Route::get('/blog/single_post/{id}', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');
 
-Route::match (['get', 'post'], '/admin/form', '\\' . \App\Http\Controllers\FormSaveActionController::class)-> name ('form-action');
+Route::match (['get', 'post'], '/admin/form/new', '\\' . \App\Http\Controllers\FormSaveActionController::class)-> name ('form-action-new');
+
+Route::match (['get', 'post'], '/admin/form/update', '\\' . \App\Http\Controllers\FormUpdateActionController::class)-> name ('form-action-update');
+
 
 //Route::get('pages/login-and-register', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');

@@ -23,11 +23,11 @@
     @csrf
         <strong> Катеория продукта: </strong> <br>
         @foreach($menu as $m)
-            <input type="radio" name="menu" value="{{$m->id}}" @if ($m->id==old('menu', $product->menu_id)) checked="checked" @endif> {{$m->name}} <br>
+            <input type="radio" name="menu" value="{{$m->id}}" @if ($m->id==old('menu' )) checked="checked" @endif> {{$m->name}} <br>
         @endforeach
         <hr>
         <strong>Название продукта:</strong> <br>
-        <input type="text" name="name" placeholder="Не более 150 символов" value="{{old ('name', $product->name )}}" /><br>
+        <input type="text" name="name" placeholder="Не более 150 символов" value="{{old ('name')}}" /><br>
         @if ($errors->any('name'))
             <div class="alert alert-danger">
                 <ul>
@@ -38,7 +38,7 @@
             </div>
         @endif
         <hr>
-        <strong>Описание продукта:</strong> <textarea name="description" placeholder="Не менее 50 символов">{{old('description', $product->description)}}</textarea><br>
+        <strong>Описание продукта:</strong> <textarea name="description" placeholder="Не менее 50 символов">{{old('description')}}</textarea><br>
         @if ($errors->any('description'))
             <div class="alert alert-danger">
                 <ul>
