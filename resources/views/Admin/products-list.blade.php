@@ -28,7 +28,7 @@
             <td> <form method="POST" action="/admin/products-delete">
                     @csrf
                     @method ('DELETE')
-                    <input type="hidden" value="{{$product->id}}"/>
+                    <input type="hidden" name="id" value="{{$product->id}}"/>
                     <input type="submit" value="Удалить"/>
                 </form> </td>
 
