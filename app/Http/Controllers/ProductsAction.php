@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Adapter\Logger\LoggerInterface;
 use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
 
 class ProductsAction extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    protected $logger;
+    public function __construct(LoggerInterface $logger)
+    {
+        $this -> logger = $logger;
+    }
+
     public function __invoke(Request $request, $key)
     {
+        $this->logger->info('Ошибка');
         $menu=Menu::where ('key', $key)->first ();
         $products = $menu->products () -> paginate (6);
 
