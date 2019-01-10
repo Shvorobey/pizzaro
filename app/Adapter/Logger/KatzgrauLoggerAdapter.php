@@ -2,22 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: Admin
- * Date: 09.01.2019
- * Time: 15:43
+ * Date: 10.01.2019
+ * Time: 11:11
  */
 
 namespace App\Adapter\Logger;
 
+use Katzgrau\KLogger\Logger;
 
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+class KatzgrauLoggerAdapter implements LoggerInterface
 
-class MonologLoggerAdapter implements LoggerInterface
 {
     protected $logger;
 
 
-    public function __construct(\Katzgrau\KLogger\Logger $logger)
+    public function __construct(Logger $logger)
     {
         $this->logger = $logger;
     }
