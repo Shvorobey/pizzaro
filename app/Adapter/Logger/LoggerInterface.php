@@ -19,13 +19,13 @@ interface LoggerInterface
     public function debug(string $msg);
 }
 
-//\Illuminate\Support\Facades\App::bind(\App\Adapter\Logger\LoggerInterface::class, function () {
-//    $logger = new \Monolog\Logger('name');
-//    $logger->pushHandler(new \Monolog\Handler\StreamHandler(__DIR__ . '/../../Logs/monolog.log'));
-//    return new MonologLoggerAdapter($logger);
-//});
-
 \Illuminate\Support\Facades\App::bind(\App\Adapter\Logger\LoggerInterface::class, function () {
-    $logger = new Logger(__DIR__.'/../../Logs');
-    return new KatzgrauLoggerAdapter($logger);
+    $logger = new \Monolog\Logger('');
+    $logger->pushHandler(new \Monolog\Handler\StreamHandler(__DIR__ . '/../../Logs/monolog.log'));
+    return new MonologLoggerAdapter($logger);
 });
+
+//\Illuminate\Support\Facades\App::bind(\App\Adapter\Logger\LoggerInterface::class, function () {
+//    $logger = new Logger(__DIR__.'/../../Logs');
+//    return new KatzgrauLoggerAdapter($logger);
+//});

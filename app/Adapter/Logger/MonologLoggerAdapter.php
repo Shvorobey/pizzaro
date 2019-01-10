@@ -10,14 +10,14 @@ namespace App\Adapter\Logger;
 
 
 use Monolog\Handler\StreamHandler;
+
 use Monolog\Logger;
 
 class MonologLoggerAdapter implements LoggerInterface
 {
     protected $logger;
 
-
-    public function __construct(\Katzgrau\KLogger\Logger $logger)
+    public function __construct(Logger $logger)
     {
         $this->logger = $logger;
     }
