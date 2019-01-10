@@ -9,11 +9,12 @@ class Product extends Model
 {
     use SoftDeletes;
 
-    public function items ()
+    public function items()
     {
         return $this->hasMany(Item::class);
     }
-    public function menu ()
+
+    public function menu()
     {
         return $this->belongsTo(Menu::class);
     }

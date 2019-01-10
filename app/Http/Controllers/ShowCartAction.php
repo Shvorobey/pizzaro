@@ -24,6 +24,6 @@ class ShowCartAction extends Controller
                 $totalitems++;
             }
         }
-        return view('pages.cart', ['items'=> $items, 'total'=>$total, 'totalitems'=>$totalitems]);
+        return view('pages.cart', ['items' => $items, 'total' => $total, 'totalitems' => $totalitems]);
     }
 }

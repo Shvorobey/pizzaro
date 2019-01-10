@@ -1,4 +1,3 @@
-
 <div class="footer-v1-static-content">
     <div class="kc-css-994088 kc_row">
         <div class="kc-row-container  kc-container">
@@ -11,7 +10,8 @@
 
                                 @foreach($images->getRandomImage() as $image)
 
-                                <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4"><img alt="" src="{{$image->image}}"></li>
+                                    <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4"><img alt="" src="{{$image->image}}">
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>

@@ -9,8 +9,6 @@
 namespace App\Adapter\Logger;
 
 
-
-
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
@@ -21,21 +19,21 @@ class MonologLoggerAdapter implements LoggerInterface
 
     public function __construct(Logger $logger)
     {
-        $this->logger=$logger;
+        $this->logger = $logger;
     }
 
     public function info(string $msg)
     {
-        $this->logger->info ($msg);
+        $this->logger->info($msg);
     }
 
     public function error(string $msg)
     {
-        $this->logger->error ($msg);
+        $this->logger->error($msg);
     }
 
     public function debug(string $msg)
     {
-        $this->logger->debug ($msg);
+        $this->logger->debug($msg);
     }
 }

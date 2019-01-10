@@ -9,9 +9,19 @@
 namespace App\Adapter\Logger;
 
 
+
+
 interface LoggerInterface
 {
-    public function info (string $msg);
-    public function error (string $msg);
-    public function debug (string $msg);
+    public function info(string $msg);
+
+    public function error(string $msg);
+
+    public function debug(string $msg);
 }
+
+\Illuminate\Support\Facades\App::bind(\App\Adapter\Logger\LoggerInterface::class, function () {
+    $logger = new \Monolog\Logger('name');
+    $logger->pushHandler(new \Monolog\Handler\StreamHandler(__DIR__ . '/../../Logs/monolog.log'));
+    return new MonologLoggerAdapter($logger);
+});

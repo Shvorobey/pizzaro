@@ -9,9 +9,9 @@ class FormActionController extends Controller
 {
     public function __invoke(Request $request)
     {
-    $menu=Menu::all();
+        $menu = Menu::all();
 
 
-        return view('admin.form', ['menu'=>$menu]);
+        return view('admin.form', ['menu' => $menu]);
     }
 }

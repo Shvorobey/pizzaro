@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Item extends Model
 {
     use SoftDeletes;
-    public function product ()
+
+    public function product()
     {
         return $this->belongsTo(Product::class);
     }

@@ -11,13 +11,15 @@ class Post extends Model
 
     public function user()
     {
-    return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
+
     public function categories()
     {
         return $this->belongsToMany(Category::class);
     }
-    public function getShortBodyAttribute ()
+
+    public function getShortBodyAttribute()
     {
         return mb_substr($this->body, 0, 250);
     }

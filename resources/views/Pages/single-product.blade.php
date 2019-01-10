@@ -4,30 +4,34 @@
 
 @section('content')
 
-    <div id="content" class="site-content" tabindex="-1" >
+    <div id="content" class="site-content" tabindex="-1">
         <div class="col-full">
             <div class="pizzaro-breadcrumb">
                 <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
-                    <a href="{{route('home')}}">Главная</a><span class="delimiter"><i class="po po-arrow-right-slider"></i></span>
+                    <a href="{{route('home')}}">Главная</a><span class="delimiter"><i
+                                class="po po-arrow-right-slider"></i></span>
                     <a href="{{route('food', $product->menu->key)}}">Пицца</a>
                     <span class="delimiter"><i class="po po-arrow-right-slider"></i></span>{{$product->name}}
                 </nav>
             </div>
             <!-- /.woocommerce-breadcrumb -->
             <div id="primary" class="content-area">
-                <main id="main" class="site-main" >
+                <main id="main" class="site-main">
                     <div class="product type-product status-publish has-post-thumbnail product_cat-pizza pa_food-type-veg first instock shipping-taxable purchasable product-type-variable has-children">
                         <div class="single-product-wrapper">
                             <div class="product-images-wrapper">
                                 <div class="images">
-                                    <a href="{{$product->image}}" itemprop="image" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto[product-gallery]">
-                                        <img width="600" height="600" src="{{$product->image}}" class="attachment-shop_single size-shop_single wp-post-image" alt=""/>
+                                    <a href="{{$product->image}}" itemprop="image" class="woocommerce-main-image zoom"
+                                       title="" data-rel="prettyPhoto[product-gallery]">
+                                        <img width="600" height="600" src="{{$product->image}}"
+                                             class="attachment-shop_single size-shop_single wp-post-image" alt=""/>
                                     </a>
                                 </div>
                             </div>
                             <!-- /.product-images-wrapper -->
                             <div class="summary entry-summary">
-                                <h1 itemprop="name" class="product_title entry-title">{{$product->name}}<span class="food-type-icon"><i class="po po-veggie-icon"></i></span></h1>
+                                <h1 itemprop="name" class="product_title entry-title">{{$product->name}}<span
+                                            class="food-type-icon"><i class="po po-veggie-icon"></i></span></h1>
                                 <div itemprop="offers">
                                 </div>
                                 <div itemprop="description">
@@ -43,11 +47,15 @@
                                 </div>
                                 <!-- AddToAny END -->
                                 <div class="thumbnails columns-4">
-                                    <a href="{{$product->image}}" class="zoom first" title="" data-rel="prettyPhoto[product-gallery]">
-                                        <img width="180" height="180" src="{{$product->image}}" class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
+                                    <a href="{{$product->image}}" class="zoom first" title=""
+                                       data-rel="prettyPhoto[product-gallery]">
+                                        <img width="180" height="180" src="{{$product->image}}"
+                                             class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
                                     </a>
-                                    <a href="{{$product->image}}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
-                                        <img width="180" height="180" src="{{$product->image}}" class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
+                                    <a href="{{$product->image}}" class="zoom" title=""
+                                       data-rel="prettyPhoto[product-gallery]">
+                                        <img width="180" height="180" src="{{$product->image}}"
+                                             class="attachment-shop_thumbnail size-shop_thumbnail" alt=""/>
                                     </a>
                                 </div>
                             </div>
@@ -56,49 +64,53 @@
                         <!-- /.single-product-wrapper -->
                         <div class="product-form-wrapper">
 
-                            <form class="variations_form cart"  enctype='multipart/form-data' data-product_id="116" data-product_variations="[{&quot;variation_id&quot;:117,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:41.9,&quot;display_regular_price&quot;:41.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Double Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;41.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:118,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thin Crust without sause&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:119,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:40.9,&quot;display_regular_price&quot;:40.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thick Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;40.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:120,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Original Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:121,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:49.9,&quot;display_regular_price&quot;:49.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Medium - 29cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;49.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:122,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:59.9,&quot;display_regular_price&quot;:59.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Large - 35cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;59.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;}]">
+                            <form class="variations_form cart" enctype='multipart/form-data' data-product_id="116"
+                                  data-product_variations="[{&quot;variation_id&quot;:117,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:41.9,&quot;display_regular_price&quot;:41.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Double Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;41.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:118,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thin Crust without sause&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:119,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:40.9,&quot;display_regular_price&quot;:40.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Thick Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;40.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:120,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:39.8,&quot;display_regular_price&quot;:39.8,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;Original Crust&quot;,&quot;attribute_select-size&quot;:&quot;Small - 22cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;39.80&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:121,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:49.9,&quot;display_regular_price&quot;:49.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Medium - 29cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;49.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;},{&quot;variation_id&quot;:122,&quot;variation_is_visible&quot;:true,&quot;variation_is_active&quot;:true,&quot;is_purchasable&quot;:true,&quot;display_price&quot;:59.9,&quot;display_regular_price&quot;:59.9,&quot;attributes&quot;:{&quot;attribute_select-crust&quot;:&quot;&quot;,&quot;attribute_select-size&quot;:&quot;Large - 35cm&quot;},&quot;image_src&quot;:&quot;&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;image_title&quot;:&quot;&quot;,&quot;image_alt&quot;:&quot;&quot;,&quot;image_caption&quot;:&quot;&quot;,&quot;image_srcset&quot;:&quot;&quot;,&quot;image_sizes&quot;:&quot;&quot;,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;59.90&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;availability_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;weight&quot;:&quot; kg&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;max_qty&quot;:null,&quot;backorders_allowed&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_downloadable&quot;:false,&quot;is_virtual&quot;:false,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;variation_description&quot;:&quot;&quot;}]">
 
-                                <table class="variations" >
+                                <table class="variations">
                                     <tbody>
 
                                     <tr>
                                         <td class="label"><label for="select-size"></label></td>
                                         @foreach($product->items as $item)
-                                        <td class="value">
-                                            <a href="{{route('add-to-cart', $item->id)}}">
-                                                <div class="ywapo_input_container ywapo_input_container_radio">
+                                            <td class="value">
+                                                <a href="{{route('add-to-cart', $item->id)}}">
+                                                    <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">{{$item->size}} {{$item->dimension}}</span></span>
-                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span></span>
-                                                </div>
-                                            </a>
-                                            @endforeach
-                                        </td>
+                                                        <span class="ywapo_label_tag_position_after"><span
+                                                                    class="ywapo_option_label ywapo_label_position_after">{{$item->size}} {{$item->dimension}}</span></span>
+                                                        <span class="ywapo_label_price"><span
+                                                                    class="woocommerce-Price-amount amount"><span
+                                                                        class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span></span>
+                                                    </div>
+                                                </a>
+                                                @endforeach
+                                            </td>
                                     </tr>
 
                                     </tbody>
                                 </table>
                                 {{--<div class="single_variation_wrap">--}}
-                                    {{--<div class="woocommerce-variation single_variation"></div>--}}
-                                    {{--<div class="woocommerce-variation-add-to-cart variations_button">--}}
-                                        {{--<div class="qty-btn">--}}
+                                {{--<div class="woocommerce-variation single_variation"></div>--}}
+                                {{--<div class="woocommerce-variation-add-to-cart variations_button">--}}
+                                {{--<div class="qty-btn">--}}
 
-                                            {{--<label>Количество</label>--}}
-                                            {{--<div class="quantity">--}}
-                                                {{--<input type="number" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"/>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<button type="submit" class="single_add_to_cart_button button alt">+</button>--}}
-                                        {{--<input type="hidden" name="add-to-cart" value="116" />--}}
-                                        {{--<input type="hidden" name="product_id" value="116" />--}}
-                                        {{--<input type="hidden" name="variation_id" class="variation_id" value="0" />--}}
-                                    {{--</div>--}}
+                                {{--<label>Количество</label>--}}
+                                {{--<div class="quantity">--}}
+                                {{--<input type="number" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"/>--}}
+                                {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<button type="submit" class="single_add_to_cart_button button alt">+</button>--}}
+                                {{--<input type="hidden" name="add-to-cart" value="116" />--}}
+                                {{--<input type="hidden" name="product_id" value="116" />--}}
+                                {{--<input type="hidden" name="variation_id" class="variation_id" value="0" />--}}
+                                {{--</div>--}}
                                 {{--</div>--}}
                             </form>
                         </div>
                         <!-- /.product-images-wrapper -->
                         <div class="woocommerce-tabs wc-tabs-wrapper">
-                            <ul class="nav nav-tabs pizzaro-nav-tabs tabs wc-tabs" >
+                            <ul class="nav nav-tabs pizzaro-nav-tabs tabs wc-tabs">
                                 <li class="nav-item description_tab active">
                                     <a href="#tab-description" class="active" data-toggle="tab">Description</a>
                                 </li>
@@ -115,8 +127,12 @@
                             <div class="tab-content">
                                 <div class="tab-pane panel active entry-content wc-tab" id="tab-description">
                                     <div class="tab-description">
-                                        <p>Although the legendary Double Burger really needs no introduction, please allow us... Tucked in between three soft buns are two all-beef patties, cheddar cheese, ketchup, onion, pickles and iceberg lettuce. Hesburger&#8217;s own paprika and cucumber mayonnaise add the crowning touch. Oh baby!</p>
-                                        <p><strong>Ingredients:</strong> Dr. Praeger&#8217;s Black Bean Burger, Focaccia bun, Balsamic Vinaigrette, Pesto, Tomato, Swiss Cheese</p>
+                                        <p>Although the legendary Double Burger really needs no introduction, please
+                                            allow us... Tucked in between three soft buns are two all-beef patties,
+                                            cheddar cheese, ketchup, onion, pickles and iceberg lettuce. Hesburger&#8217;s
+                                            own paprika and cucumber mayonnaise add the crowning touch. Oh baby!</p>
+                                        <p><strong>Ingredients:</strong> Dr. Praeger&#8217;s Black Bean Burger, Focaccia
+                                            bun, Balsamic Vinaigrette, Pesto, Tomato, Swiss Cheese</p>
                                         <p>&nbsp;</p>
                                         <p>&nbsp;</p>
                                         <div class="table-responsive">
@@ -195,24 +211,29 @@
                                             </div>
                                             <div class="food-items">
                                                 <div class="items col-md-4 col-xs-12 col-sm-4">
-                                                    <span class="image"><img src="assets/images/single-product/3.jpg" alt="" /></span>
-                                                    <span class="info">100% Whole Milk<br />Mozarella</span>
+                                                    <span class="image"><img src="assets/images/single-product/3.jpg"
+                                                                             alt=""/></span>
+                                                    <span class="info">100% Whole Milk<br/>Mozarella</span>
                                                 </div>
                                                 <div class="items col-md-4 col-xs-12 col-sm-4">
-                                                    <span class="image"><img src="assets/images/single-product/4.jpg" alt="" /></span>
-                                                    <span class="info">Ecological<br />Mushrooms</span>
+                                                    <span class="image"><img src="assets/images/single-product/4.jpg"
+                                                                             alt=""/></span>
+                                                    <span class="info">Ecological<br/>Mushrooms</span>
                                                 </div>
                                                 <div class="items col-md-4 col-xs-12 col-sm-4">
-                                                    <span class="image"><img src="assets/images/single-product/5.jpg" alt="" /></span>
+                                                    <span class="image"><img src="assets/images/single-product/5.jpg"
+                                                                             alt=""/></span>
                                                     <span class="info">Zesty Pepperoni</span>
                                                 </div>
                                                 <div class="items col-md-4 col-xs-12 col-sm-4">
-                                                    <span class="image"><img src="assets/images/single-product/6.jpg" alt="" /></span>
-                                                    <span class="info">Seasoned Italian<br />Sausage</span>
+                                                    <span class="image"><img src="assets/images/single-product/6.jpg"
+                                                                             alt=""/></span>
+                                                    <span class="info">Seasoned Italian<br/>Sausage</span>
                                                 </div>
                                                 <div class="items col-md-4 col-xs-12 col-sm-4">
-                                                    <span class="image"><img src="assets/images/single-product/7.jpg" alt="" /></span>
-                                                    <span class="info">Fresh Daily<br />Spinach</span>
+                                                    <span class="image"><img src="assets/images/single-product/7.jpg"
+                                                                             alt=""/></span>
+                                                    <span class="info">Fresh Daily<br/>Spinach</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -311,14 +332,20 @@
                                             <div id="review_form_wrapper">
                                                 <div id="review_form">
                                                     <div id="respond" class="comment-respond">
-                                                        <h3 id="reply-title" class="comment-reply-title">Be the first to review &ldquo;Hawaii Vegetarian Pizza&rdquo;
+                                                        <h3 id="reply-title" class="comment-reply-title">Be the first to
+                                                            review &ldquo;Hawaii Vegetarian Pizza&rdquo;
                                                             <small>
-                                                                <a rel="nofollow" id="cancel-comment-reply-link" href="/pizzaro/product/hawaii-vegetarian-pizza/#respond" style="display:none;">Cancel reply</a>
+                                                                <a rel="nofollow" id="cancel-comment-reply-link"
+                                                                   href="/pizzaro/product/hawaii-vegetarian-pizza/#respond"
+                                                                   style="display:none;">Cancel reply</a>
                                                             </small>
                                                         </h3>
-                                                        <form action="#"  id="commentform" class="comment-form" novalidate>
+                                                        <form action="#" id="commentform" class="comment-form"
+                                                              novalidate>
                                                             <p class="comment-notes">
-                                                                <span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
+                                                                <span id="email-notes">Your email address will not be published.</span>
+                                                                Required fields are marked <span
+                                                                        class="required">*</span>
                                                             </p>
                                                             <p class="comment-form-rating">
                                                                 <label>Your Rating</label>
@@ -335,20 +362,26 @@
 
                                                             <p class="comment-form-comment">
                                                                 <label for="comment">Your Review <span class="required">*</span></label>
-                                                                <textarea id="comment" name="comment" cols="45" rows="8"></textarea>
+                                                                <textarea id="comment" name="comment" cols="45"
+                                                                          rows="8"></textarea>
                                                             </p>
                                                             <p class="comment-form-author">
                                                                 <label for="author">Name <span class="required">*</span></label>
-                                                                <input id="author" name="author" type="text" value="" size="30" aria-required="true" required />
+                                                                <input id="author" name="author" type="text" value=""
+                                                                       size="30" aria-required="true" required/>
                                                             </p>
                                                             <p class="comment-form-email">
                                                                 <label for="email">Email <span class="required">*</span></label>
-                                                                <input id="email" name="email" type="email" value="" size="30" aria-required="true" required />
+                                                                <input id="email" name="email" type="email" value=""
+                                                                       size="30" aria-required="true" required/>
                                                             </p>
                                                             <p class="form-submit">
-                                                                <input name="submit" type="submit" id="submit" class="submit" value="Submit" />
-                                                                <input type='hidden' name='comment_post_ID' value='50' id='comment_post_ID' />
-                                                                <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                                                                <input name="submit" type="submit" id="submit"
+                                                                       class="submit" value="Submit"/>
+                                                                <input type='hidden' name='comment_post_ID' value='50'
+                                                                       id='comment_post_ID'/>
+                                                                <input type='hidden' name='comment_parent'
+                                                                       id='comment_parent' value='0'/>
                                                             </p>
                                                         </form>
                                                     </div>
@@ -370,34 +403,49 @@
                                         <div class="product-outer">
                                             <div class="product-inner">
                                                 <div class="product-image-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                                        <img src="assets/images/products/p9.jpg" class="img-responsive" alt="">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
+                                                        <img src="assets/images/products/p9.jpg" class="img-responsive"
+                                                             alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-content-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
                                                         <h3>Trio Cheese</h3>
                                                         <div itemprop="description">
-                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic, mozzarella, mushrooms and olives.</p>
+                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic,
+                                                                mozzarella, mushrooms and olives.</p>
                                                         </div>
-                                                        <div  class="yith_wapo_groups_container">
-                                                            <div  class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide " data-requested="1" data-type="radio" data-id="1" data-condition="">
+                                                        <div class="yith_wapo_groups_container">
+                                                            <div class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide "
+                                                                 data-requested="1" data-type="radio" data-id="1"
+                                                                 data-condition="">
                                                                 <h3><span>Pick Size</span></h3>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>19</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>19</span></span>
                                                                 </div>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>25</span></span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </a>
                                                     <div class="hover-area">
-                                                        <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a>
+                                                        <a rel="nofollow" href="single-product-v1.html"
+                                                           data-quantity="1" data-product_id="51" data-product_sku=""
+                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                            to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -409,34 +457,49 @@
                                         <div class="product-outer">
                                             <div class="product-inner">
                                                 <div class="product-image-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                                        <img src="assets/images/products/p10.jpg" class="img-responsive" alt="">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
+                                                        <img src="assets/images/products/p10.jpg" class="img-responsive"
+                                                             alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-content-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
                                                         <h3>Trio Cheese</h3>
                                                         <div itemprop="description">
-                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic, mozzarella, mushrooms and olives.</p>
+                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic,
+                                                                mozzarella, mushrooms and olives.</p>
                                                         </div>
-                                                        <div  class="yith_wapo_groups_container">
-                                                            <div  class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide " data-requested="1" data-type="radio" data-id="1" data-condition="">
+                                                        <div class="yith_wapo_groups_container">
+                                                            <div class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide "
+                                                                 data-requested="1" data-type="radio" data-id="1"
+                                                                 data-condition="">
                                                                 <h3><span>Pick Size</span></h3>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>19</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>19</span></span>
                                                                 </div>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>25</span></span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </a>
                                                     <div class="hover-area">
-                                                        <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a>
+                                                        <a rel="nofollow" href="single-product-v1.html"
+                                                           data-quantity="1" data-product_id="51" data-product_sku=""
+                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                            to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -448,34 +511,49 @@
                                         <div class="product-outer">
                                             <div class="product-inner">
                                                 <div class="product-image-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                                        <img src="assets/images/products/p2.jpg" class="img-responsive" alt="">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
+                                                        <img src="assets/images/products/p2.jpg" class="img-responsive"
+                                                             alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-content-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
                                                         <h3>Trio Cheese</h3>
                                                         <div itemprop="description">
-                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic, mozzarella, mushrooms and olives.</p>
+                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic,
+                                                                mozzarella, mushrooms and olives.</p>
                                                         </div>
-                                                        <div  class="yith_wapo_groups_container">
-                                                            <div  class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide " data-requested="1" data-type="radio" data-id="1" data-condition="">
+                                                        <div class="yith_wapo_groups_container">
+                                                            <div class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide "
+                                                                 data-requested="1" data-type="radio" data-id="1"
+                                                                 data-condition="">
                                                                 <h3><span>Pick Size</span></h3>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>19</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>19</span></span>
                                                                 </div>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>25</span></span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </a>
                                                     <div class="hover-area">
-                                                        <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a>
+                                                        <a rel="nofollow" href="single-product-v1.html"
+                                                           data-quantity="1" data-product_id="51" data-product_sku=""
+                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                            to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -487,34 +565,49 @@
                                         <div class="product-outer">
                                             <div class="product-inner">
                                                 <div class="product-image-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                                        <img src="assets/images/products/p1.jpg" class="img-responsive" alt="">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
+                                                        <img src="assets/images/products/p1.jpg" class="img-responsive"
+                                                             alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-content-wrapper">
-                                                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                                    <a href="single-product-v1.html"
+                                                       class="woocommerce-LoopProduct-link">
                                                         <h3>Trio Cheese</h3>
                                                         <div itemprop="description">
-                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic, mozzarella, mushrooms and olives.</p>
+                                                            <p style="max-height: none;">Extra-virgin olive oil, garlic,
+                                                                mozzarella, mushrooms and olives.</p>
                                                         </div>
-                                                        <div  class="yith_wapo_groups_container">
-                                                            <div  class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide " data-requested="1" data-type="radio" data-id="1" data-condition="">
+                                                        <div class="yith_wapo_groups_container">
+                                                            <div class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide "
+                                                                 data-requested="1" data-type="radio" data-id="1"
+                                                                 data-condition="">
                                                                 <h3><span>Pick Size</span></h3>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>19</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">22 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>19</span></span>
                                                                 </div>
                                                                 <div class="ywapo_input_container ywapo_input_container_radio">
 
-                                                                    <span class="ywapo_label_tag_position_after"><span class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
-                                                                    <span class="ywapo_label_price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25</span></span>
+                                                                    <span class="ywapo_label_tag_position_after"><span
+                                                                                class="ywapo_option_label ywapo_label_position_after">29 cm</span></span>
+                                                                    <span class="ywapo_label_price"><span
+                                                                                class="woocommerce-Price-amount amount"><span
+                                                                                    class="woocommerce-Price-currencySymbol">$</span>25</span></span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </a>
                                                     <div class="hover-area">
-                                                        <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="51" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a>
+                                                        <a rel="nofollow" href="single-product-v1.html"
+                                                           data-quantity="1" data-product_id="51" data-product_sku=""
+                                                           class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                            to cart</a>
                                                     </div>
                                                 </div>
                                             </div>

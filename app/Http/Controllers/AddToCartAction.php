@@ -16,12 +16,11 @@ class AddToCartAction extends Controller
 {
     public function __invoke(Request $request, $id)
     {
-    $item = Item::find ($id);
-    $cart=session('cart');
-        if ($cart === null)
-        {
-        $cart=[];
-        session()->put('cart', $cart);
+        $item = Item::find($id);
+        $cart = session('cart');
+        if ($cart === null) {
+            $cart = [];
+            session()->put('cart', $cart);
         }
         session()->push('cart', $item);
         return redirect()->route('cart');
