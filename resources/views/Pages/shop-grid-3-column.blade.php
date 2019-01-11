@@ -25,6 +25,9 @@
                     <div class="create-your-own"><a href="single-product-v3.html">Конструктор пиццы</a></div>
                 </div>
             </div>
+            @if (\Session::has ('flash'))
+                <h3><font size="5" color="red" face="Arial">{{\Session::get ('flash')}}</font></h3>
+            @endif
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <div class="columns-3">

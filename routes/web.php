@@ -41,6 +41,10 @@ Route::get('/cart/add_to_cart/{id}', '\\' . \App\Http\Controllers\AddToCartActio
 
 Route::get('/cart', '\\' . \App\Http\Controllers\ShowCartAction::class)->name('cart');
 
+Route::get('/cart/remove/{id}', '\\' . \App\Http\Controllers\RemoveCartAction::class)->name('remove-from-cart');
+
+Route::post('/update_cart', '\\' . \App\Http\Controllers\UpdateCartAction::class)->name('update-cart');
+
 Route::get('/cart/checkout', '\\' . \App\Http\Controllers\ShowCheckoutAction::class)->name('checkout');
 
 Route::get('/order_reseived', function () {

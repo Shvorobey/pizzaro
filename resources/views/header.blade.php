@@ -225,8 +225,8 @@
                         <ul class="sub-menu">
                             <li>
                                 <a href="{{route('cart')}}" title="Показать корзину">
-                                    <span class="count">{{$totalitems}} ед.</span> <span
-                                            class="amount">{{$total}} грн.</span>
+                                    <span class="count">{{\Cart::getTotalQuantity ()}} ед.</span> <span
+                                            class="amount">{{\Cart::getTotal()}} грн.</span>
                                 </a>
                             </li>
                         </ul>
