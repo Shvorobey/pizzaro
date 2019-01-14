@@ -38,9 +38,9 @@
                             <div class="woocommerce">
                                 <p class="woocommerce-thankyou-order-received">Спасибо что Вы с нами.</p>
                                 <ul class="woocommerce-thankyou-order-details order_details">
-                                    {{--<li class="order">Order Number:<strong>645</strong></li>--}}
-                                    {{--<li class="date">Date:<strong>February 2, 2017</strong></li>--}}
-                                    {{--<li class="total">К оплате:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$total}} грн.</span></strong></li>--}}
+                                    <li class="order">Номер заказа:<strong>{{$order->id}}</strong></li>
+                                    <li class="date">Время:<strong>{{$order->created_at}}</strong></li>
+                                    <li class="total">К оплате:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{\Cart::getTotal ()}} грн.</span></strong></li>
                                     {{--<li class="method">Payment Method:<strong>Direct Bank Transfer</strong></li>--}}
                                 </ul>
                                 <div class="clear"></div>
@@ -53,23 +53,23 @@
                                         <th class="product-total">Цена</th>
                                     </tr>
                                     </thead>
-                                    @if (($items != null))
-                                        @foreach($items as $item)
+                                    @if ((!Cart::isEmpty()))
+                                        @foreach(\Cart::getContent () as $item)
                                             <tbody>
                                             <tr class="order_item">
                                                 <td class="product-name">
-                                                    <a href="single-product-v1.html">{{$item->product->name}}</a>
-                                                    <strong class="product-quantity">× 1</strong>
+                                                    <a href="single-product-v1.html">{{$item->name}}</a>
+                                                    <strong class="product-quantity">x {{$item->quantity}}</strong>
                                                     <dl class="variation">
                                                         <dt class="variation-PickSize362590"><span id="1">Количество (размер:</span>
                                                         </dt>
                                                         <dd class="variation-PickSize362590">
-                                                            <p>{$item->size}} {{$item->dimension}}</p>
+                                                            <p>{{$item->attributes->size}} {{$item->attributes->dimension}}</p>
                                                         </dd>
                                                     </dl>
                                                 </td>
                                                 <td class="product-total"><span class="woocommerce-Price-amount amount"><span
-                                                                class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span>
+                                                                class="woocommerce-Price-currencySymbol"></span>{{$item->getPriceSum ()}} грн.</span>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -81,7 +81,7 @@
                                     <tr>
                                         <th scope="row">К оплате:</th>
                                         <td><span class="woocommerce-Price-amount amount"><span
-                                                        class="woocommerce-Price-currencySymbol"></span>{{$total}} грн.</span>
+                                                        class="woocommerce-Price-currencySymbol"></span>{{\Cart:: getTotal ()}} грн.</span>
                                         </td>
                                     </tr>
 
@@ -100,25 +100,25 @@
                                     {{--</tr>--}}
                                     </tfoot>
                                 </table>
-                                {{--<header>--}}
-                                {{--<h2>Customer Details</h2>--}}
-                                {{--</header>--}}
-                                {{--<table class="shop_table customer_details">--}}
-                                {{--<tbody>--}}
-                                {{--<tr>--}}
-                                {{--<th>Email:</th>--}}
-                                {{--<td>anas@transvelo.com</td>--}}
-                                {{--</tr>--}}
-                                {{--<tr>--}}
-                                {{--<th>Telephone:</th>--}}
-                                {{--<td>9547399295</td>--}}
-                                {{--</tr>--}}
-                                {{--</tbody>--}}
-                                {{--</table>--}}
-                                {{--<header class="title">--}}
-                                {{--<h3>Billing Address</h3>--}}
-                                {{--</header>--}}
-                                {{--<address>Transvelo<br>Mohamed Anas<br>Transvelo<br>No 27 Maraicoir Street, Mannady<br>chennai - 600001<br>Tamil Nadu, India</address>--}}
+                                <header>
+                                <h2>Контактные данные заказчика:</h2>
+                                </header>
+                                <table class="shop_table customer_details">
+                                <tbody>
+                                <tr>
+                                <th>Email:</th>
+                                <td>{{$order->email}}</td>
+                                </tr>
+                                <tr>
+                                <th>Телефон:</th>
+                                <td>{{$order->phone}}</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <header class="title">
+                                <h3>Адрес для доставки:</h3>
+                                </header>
+                                <address>Transvelo<br>{{$order->first_name}} {{$order->last_name}}<br>Transvelo<br>{{$order->address}}<br>{{$order->notes}}<br></address>
 
                             </div>
                         </div>

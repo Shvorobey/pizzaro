@@ -30,27 +30,14 @@ Route::get('/cart/remove/{id}', '\\' . \App\Http\Controllers\RemoveCartAction::c
 
 Route::post('/update_cart', '\\' . \App\Http\Controllers\UpdateCartAction::class)->name('update-cart');
 
-Route::get('/cart/checkout', '\\' . \App\Http\Controllers\ShowCheckoutAction::class)->name('checkout');
+Route::get('/cart/checkout', function (){
+    return view('pages.checkout');} )->name('checkout');
 
-Route::post('/cart/checkout', function (\Illuminate\Http\Request $request) {
-    return redirect() -> route('order');
-})->name('checkout');
+Route::post('/cart/checkout', '\\' . \App\Http\Controllers\OrderController::class)->name('checkout');
 
-Route::get('/order_reseived', function () {
-//    $items = [];
-//    $items = session()->get('cart');
-//    $total = 0;
-//    $totalitems = 0;
-//
-//    if ($items != null) {
-//        foreach ($items as $item) {
-//            $total += $item->price;
-//            $totalitems++;
-//        }
-//    }
-    return view('pages.order'
-//        , ['items' => $items, 'total' => $total, 'totalitems' => $totalitems]
-    );
+Route::get('/order_reseived/{id}', function (\Illuminate\Http\Request $request, $id) {
+    $order = \App\Order::find($id);
+    return view('pages.order', ['order' => $order]);
 })->name('order');
 
 Route::get('/blog', '\\' . \App\Http\Controllers\ShowPostsAction::class)->name('blog');
@@ -75,3 +62,6 @@ Route::match(['delete'], '/admin/products-delete', function (\Illuminate\Http\Re
 
 
 //Route::get('pages/login-and-register', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

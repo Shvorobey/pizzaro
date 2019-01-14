@@ -31,8 +31,9 @@
                     <div id="post-9" class="post-9 page type-page status-publish hentry">
                         <div class="entry-content">
                             <div class="woocommerce">
-                                <form name="checkout" class="checkout woocommerce-checkout" action="#"
+                                <form  name="checkout" class="checkout woocommerce-checkout"
                                       enctype="multipart/form-data">
+                                    @csrf
                                     <div class="col2-set" id="customer_details">
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
@@ -78,15 +79,15 @@
                                                    id="billing_address_1_field">
                                                     <label for="billing_address_1" class="">Адрес: </label>
                                                     <input type="text" class="input-text " name="billing_address_1"
-                                                           id="billing_address_1" placeholder="Улица"
+                                                           id="billing_address_1" placeholder="Улица, дом, квартира"
                                                            autocomplete="address-line1" value=""/>
                                                 </p>
-                                                <p class="form-row form-row form-row-wide address-field"
-                                                   id="billing_address_2_field">
-                                                    <input type="text" class="input-text " name="billing_address_2"
-                                                           id="billing_address_2" placeholder="Дом/квартира"
-                                                           autocomplete="address-line2" value=""/>
-                                                </p>
+                                                {{--<p class="form-row form-row form-row-wide address-field"--}}
+                                                   {{--id="billing_address_2_field">--}}
+                                                    {{--<input type="text" class="input-text " name="billing_address_2"--}}
+                                                           {{--id="billing_address_2" placeholder="Дом/квартира"--}}
+                                                           {{--autocomplete="address-line2" value=""/>--}}
+                                                {{--</p>--}}
 
                                                 {{--<p class="form-row form-row form-row-last address-field validate-required validate-postcode" id="billing_postcode_field">--}}
                                                 {{--<label for="billing_postcode" class="">Postcode / ZIP </label>--}}
@@ -158,6 +159,7 @@
                                                 <span class="woocommerce-Price-amount amount">
                                                 <span class="woocommerce-Price-currencySymbol"></span>{{$item->getPriceSum ()}} грн.</span>
                                                         </td>
+                                                    </tr>
                                                             @endforeach
                                                             @else
                                                                 <h3>В Вашей корзине нет заказов</h3>
@@ -241,7 +243,7 @@
                                                 {{--<label for="terms" class="checkbox">I&rsquo;ve read and accept the <a href="terms-and-conditions.html" target="_blank">terms &amp; conditions</a> <span class="required">*</span></label>--}}
                                                 {{--<input type="hidden" name="terms-field" value="1" />--}}
                                                 {{--</p>--}}
-                                                <a class="button alt" href="{{route('order')}}"
+                                                <a class="button alt"  href="{{route('checkout')}}"
                                                    style="text-align: center;">Оформить заказ</a>
                                             </div>
                                         </div>
