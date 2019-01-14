@@ -32,6 +32,10 @@ Route::post('/update_cart', '\\' . \App\Http\Controllers\UpdateCartAction::class
 
 Route::get('/cart/checkout', '\\' . \App\Http\Controllers\ShowCheckoutAction::class)->name('checkout');
 
+Route::post('/cart/checkout', function (\Illuminate\Http\Request $request) {
+    return redirect() -> route('order');
+})->name('checkout');
+
 Route::get('/order_reseived', function () {
 //    $items = [];
 //    $items = session()->get('cart');

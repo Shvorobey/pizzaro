@@ -130,27 +130,34 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @if (($items != null))
-                                                @foreach($items as $item)
+                                            @if ((!Cart::isEmpty()))
+                                                @foreach(\Cart::getContent () as $item)
                                                     <tr class="cart_item">
                                                         <td class="product-name">
-                                                            {{$item->product->name}}&nbsp;<strong
-                                                                    class="product-quantity">&times; 1</strong>
+                                                            <strong>{{$item->name}} </strong>
+                                                            &nbsp;<strong class="product-quantity" >x {{$item->quantity}}</strong>
                                                             <dl class="variation">
-                                                                <dt class="variation-Baseprice">Цена:</dt>
-                                                                <dd class="variation-Baseprice">
-                                                                    <p>
-                                                                        <span class="woocommerce-Price-amount amount"><span
-                                                                                    class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span>
-                                                                    </p>
-                                                                </dd>
+                                                                <dt class="variation-Baseprice">Цена за еденицу: {{$item->price}} грн.</dt>
+                                                                {{--<dl class="variation">--}}
+                                                                    {{--<dt class="variation-Baseprice">Итого: {{$item->getPriceSum ()}} грн.</dt>--}}
+
+                                                                {{--<dd class="variation-Baseprice">--}}
+                                                                    {{--<p>--}}
+                                                                        {{--<span class="woocommerce-Price-amount amount"><span--}}
+                                                                                    {{--class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span>--}}
+                                                                    {{--</p>--}}
+                                                                {{--</dd>--}}
                                                                 <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
-                                                                    Количество (размер):
+                                                                    Количество (размер): {{$item->attributes->size}}  {{$item->attributes->dimension}}
                                                                 </dt>
-                                                                <dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
-                                                                    <p>{{$item->size}}  {{$item->dimension}}</p>
-                                                                </dd>
+                                                                {{--<dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">--}}
+                                                                    {{--<p>{{$item->attributes->size}}  {{$item->attributes->dimension}}</p>--}}
+                                                                {{--</dd>--}}
                                                             </dl>
+                                                        <td class="product-total">
+                                                <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol"></span>{{$item->getPriceSum ()}} грн.</span>
+                                                        </td>
                                                             @endforeach
                                                             @else
                                                                 <h3>В Вашей корзине нет заказов</h3>
@@ -163,14 +170,14 @@
                                             {{--<th>Subtotal</th>--}}
                                             {{--<td>--}}
                                             {{--<span class="woocommerce-Price-amount amount">--}}
-                                            {{--<span class="woocommerce-Price-currencySymbol">&#36;</span>51.80</span>--}}
+                                            {{--<span class="woocommerce-Price-currencySymbol">&#36;</span>{{\Cart::getSubTotal()}}</span>--}}
                                             {{--</td>--}}
                                             {{--</tr>--}}
                                             <tr class="order-total">
                                                 <th>К оплате:</th>
                                                 <td>
                                                     <strong><span class="woocommerce-Price-amount amount"><span
-                                                                    class="woocommerce-Price-currencySymbol"></span>{{$total}} грн.</span></strong>
+                                                                    class="woocommerce-Price-currencySymbol"></span>{{\Cart:: getTotal ()}} грн.</span></strong>
                                                 </td>
                                             </tr>
                                             </tfoot>

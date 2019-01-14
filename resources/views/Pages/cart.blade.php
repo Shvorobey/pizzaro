@@ -44,7 +44,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @if ((\Cart::getContent () != null))
+                                        @if ((!Cart::isEmpty()))
                                         @foreach(\Cart::getContent () as $item)
                                             <tr class="cart_item">
                                                 <td class="product-remove">
