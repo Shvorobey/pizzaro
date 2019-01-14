@@ -1,19 +1,8 @@
 <?php
 
 
-
 Route::get('/', function () {
-
-    $items = session()->get('cart');
-    $total = 0;
-    $totalitems = 0;
-    if ($items != null) {
-        foreach ($items as $item) {
-            $total += $item->price;
-            $totalitems++;
-        }
-    }
-    return view('pages.index', ['items' => $items, 'total' => $total, 'totalitems' => $totalitems]);
+    return view('pages.index');
 })->name('home');
 
 Route::get('/food/{key}', '\\' . \App\Http\Controllers\ProductsAction::class)->name('food');
@@ -30,10 +19,6 @@ Route::post('/mail-subscribed', function (\Illuminate\Http\Request $request) {
     $mail = new \App\Mail\UserSubscribed($request->input('email'));
     \App\Jobs\SendEmail::dispatch($mail)->onQueue('emails');
 
-    //$mail->subject=' Pizzaro стало немного ближе. Добро пожаловать. ';
-    //$mail->from=' Команда Pizzaro';
-    // \Illuminate\Support\Facades\Mail ::to('a.shvorobey@gmail.com')->send(new \App\Mail\UserSubscribed($mail));
-
     return view('pages.mail-subscribed');
 })->name('mail-subscribed');
 
@@ -48,18 +33,20 @@ Route::post('/update_cart', '\\' . \App\Http\Controllers\UpdateCartAction::class
 Route::get('/cart/checkout', '\\' . \App\Http\Controllers\ShowCheckoutAction::class)->name('checkout');
 
 Route::get('/order_reseived', function () {
-    $items = [];
-    $items = session()->get('cart');
-    $total = 0;
-    $totalitems = 0;
-
-    if ($items != null) {
-        foreach ($items as $item) {
-            $total += $item->price;
-            $totalitems++;
-        }
-    }
-    return view('pages.order', ['items' => $items, 'total' => $total, 'totalitems' => $totalitems]);
+//    $items = [];
+//    $items = session()->get('cart');
+//    $total = 0;
+//    $totalitems = 0;
+//
+//    if ($items != null) {
+//        foreach ($items as $item) {
+//            $total += $item->price;
+//            $totalitems++;
+//        }
+//    }
+    return view('pages.order'
+//        , ['items' => $items, 'total' => $total, 'totalitems' => $totalitems]
+    );
 })->name('order');
 
 Route::get('/blog', '\\' . \App\Http\Controllers\ShowPostsAction::class)->name('blog');
