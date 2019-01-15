@@ -5,6 +5,11 @@ Route::get('/', function () {
     return view('pages.index');
 })->name('home');
 
+Route::get('/locator', function () {
+    return view('pages.locator');
+})->name('locator');
+
+
 Route::get('/food/{key}', '\\' . \App\Http\Controllers\ProductsAction::class)->name('food');
 
 Route::get('/single_product/{id}', '\\' . \App\Http\Controllers\SingleProductAction::class)->name('single-product');

@@ -1,6 +1,6 @@
 <header id="masthead" class="site-header header-v1" style="background-image: none; ">
     <div class="col-full">
-        <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>о
+        <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
         <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
         <div class="header-wrap">
             <div class="site-branding">
@@ -20,8 +20,8 @@
                 </button>
                 <div class="primary-navigation">
                     <ul id="menu-main-menu" class="menu nav-menu" aria-expanded="false">
-                        <li class="menu-item"><a href="  {{route('admin')}}">@if (\Auth::check ()){{\Auth::user()->name}}
-                            @else Вход @endif</a></li>
+                        {{--<li class="menu-item"><a href="  {{route('admin')}}">@if (\Auth::check ()){{\Auth::user()->name}}--}}
+                            {{--@else Вход @endif</a></li>--}}
                         @if (\Auth::check ())
                         <li class="yamm-fw menu-item menu-item-has-children">
                             <a href="#">Формы</a>
@@ -186,7 +186,11 @@
                         </li>
                         @endif
                         <li class="menu-item"><a href="{{route('blog')}}">Блог</a></li>
-                        <li class="menu-item"><a href="store-locator.html">Store Locator</a></li>
+                        <li class="menu-item"><a href="{{route('locator')}}">Мы на карте</a></li>
+                        <li class="menu-item"><a href="store-locator.html"></a></li>
+                        <li class="menu-item"><a href="store-locator.html"></a></li>
+                        <li class="menu-item"><a href="  {{route('admin')}}">@if (\Auth::check ()){{\Auth::user()->name}}
+                                @else Вход @endif</a></li>
                     </ul>
                 </div>
 
@@ -213,8 +217,10 @@
                         <option value="044 555-55-55">Киев</option>
                         <option value="032 333-33-33">Львов</option>
                     </select>
+
                     <span id="city-phone-number-label" class="phone-number">048 777-77-77</span>
                 </div>
+
                 <ul class="site-header-cart-v2 menu">
                     <li class="cart-content ">
                         <a href="{{route('cart')}}" title="Перейти к заказу">
@@ -228,8 +234,10 @@
                                             class="amount">{{\Cart::getTotal()}} грн.</span>
                                 </a>
                             </li>
+
                         </ul>
                     </li>
+
                 </ul>
             </div>
         </div>
