@@ -19,7 +19,7 @@
 </head>
 <body id="top" class="@yield ('body-classes')">
 <div id="page" class="hfeed site">
-    {{--{{dd($product)}}--}}
+    Вы вошли под именем: <strong>{{Auth::user()->name}}</strong>
     <form action="" method="post" enctype="multipart/form-data">
 @csrf
 <strong> Катеория продукта: </strong> <br>

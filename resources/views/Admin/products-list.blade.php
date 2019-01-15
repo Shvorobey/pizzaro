@@ -19,6 +19,7 @@
 </head>
 <body id="top" class="@yield ('body-classes')">
 <div id="page" class="hfeed site">
+    Вы вошли под именем: <strong>{{Auth::user()->name}}</strong>
 <table>
     @foreach($products as $product)
 
@@ -30,6 +31,12 @@
                     @method ('DELETE')
                     <input type="hidden" name="id" value="{{$product->id}}"/>
                     <input type="submit" value="Удалить"/>
+                </form></td>
+            <td> <form method="GET" action="/admin/form/update/">
+                    @csrf
+
+                    <input type="hidden" name="id" value="{{$product->id}}"/>
+                    <input type="submit" value="Изменить"/>
                 </form> </td>
 
         </tr>

@@ -33,6 +33,7 @@
                             <div class="woocommerce">
                                 <form  name="checkout" class="checkout woocommerce-checkout"
                                       enctype="multipart/form-data">
+
                                     @csrf
                                     <div class="col2-set" id="customer_details">
                                         <div class="col-1">

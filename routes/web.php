@@ -52,7 +52,7 @@ Route::match(['get', 'post'], '/admin/form/new', '\\' . \App\Http\Controllers\Fo
 
 Route::match(['get', 'post'], '/admin/form/update/', '\\' . \App\Http\Controllers\FormUpdateActionController::class)->name('form-action-update');
 
-Route::match(['get'], '/admin/products', '\\' . \App\Http\Controllers\ProductsListAction::class)->name('form-products-list');
+Route::match(['get'], '/admin/products', '\\' . \App\Http\Controllers\ProductsListAction::class)->name('products-list');
 
 Route::match(['delete'], '/admin/products-delete', function (\Illuminate\Http\Request $request) {
     $product = \App\Product::find($request->input('id'));
@@ -62,6 +62,8 @@ Route::match(['delete'], '/admin/products-delete', function (\Illuminate\Http\Re
 
 
 //Route::get('pages/login-and-register', '\\' . \App\Http\Controllers\ShowSinglePost::class)-> name ('single-post');
+
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('admin');

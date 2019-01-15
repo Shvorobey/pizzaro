@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class FormUpdateActionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function __invoke(Request $request)
     {
         if ($request->method() == 'POST') {
