@@ -20,6 +20,7 @@ class UpdateCartAction extends Controller
      */
     public function __invoke(Request $request)
     {
+//dd($request->post());
         foreach ($request->post() ['items'] as $id => $quantity) {
             \Cart::update($id, [
                 'quantity' => [

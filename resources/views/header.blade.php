@@ -188,7 +188,6 @@
                         <li class="menu-item"><a href="{{route('blog')}}">Блог</a></li>
                         <li class="menu-item"><a href="{{route('locator')}}">Мы на карте</a></li>
                         <li class="menu-item"><a href="store-locator.html"></a></li>
-                        <li class="menu-item"><a href="store-locator.html"></a></li>
                         <li class="menu-item"><a href="  {{route('admin')}}">@if (\Auth::check ()){{\Auth::user()->name}}
                                 @else Вход @endif</a></li>
                     </ul>

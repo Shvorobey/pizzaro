@@ -118,7 +118,7 @@
                                 <header class="title">
                                 <h3>Адрес для доставки:</h3>
                                 </header>
-                                <address>Transvelo<br>{{$order->first_name}} {{$order->last_name}}<br>Transvelo<br>{{$order->address}}<br>{{$order->notes}}<br></address>
+                                <address><br>{{$order->first_name}} {{$order->last_name}}<br>{{$order->address}}<br>{{$order->notes}}<br></address>
 
                             </div>
                         </div>

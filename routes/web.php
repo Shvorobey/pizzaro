@@ -55,7 +55,7 @@ Route::get('/blog/single_post/{id}', '\\' . \App\Http\Controllers\ShowSinglePost
 
 Route::match(['get', 'post'], '/admin/form/new', '\\' . \App\Http\Controllers\FormSaveActionController::class)->name('form-action-new');
 
-Route::match(['get', 'post'], '/admin/form/update/', '\\' . \App\Http\Controllers\FormUpdateActionController::class)->name('form-action-update');
+Route::match(['get', 'post'], '/admin/form/update/{id?}', '\\' . \App\Http\Controllers\FormUpdateActionController::class)->name('form-action-update');
 
 Route::match(['get'], '/admin/products', '\\' . \App\Http\Controllers\ProductsListAction::class)->name('products-list');
 

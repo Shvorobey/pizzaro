@@ -16,14 +16,15 @@ class OrderController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $this->validate($request, [
-            'first_name' => 'required | max: 100 | string',
-            'last_name'  => 'required | max: 100 | string',
-            'email'      => 'e-mail',
-            'phone'      => 'required | size=13',
-            'address'    => 'required | max: 300',
-            'notes'      => 'string| max: 500',
-        ]);
+//        dd($request->post());
+//        $this->validate($request, [
+//            'first_name' => 'required | max: 100 | string',
+//            'last_name'  => 'required | max: 100 | string',
+//            'email'      => 'e-mail',
+//            'phone'      => 'required | size=13',
+//            'address'    => 'required | max: 300',
+//            'notes'      => 'string| max: 500',
+//        ]);
 
 
         $order = new Order();

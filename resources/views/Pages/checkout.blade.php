@@ -31,11 +31,12 @@
                     <div id="post-9" class="post-9 page type-page status-publish hentry">
                         <div class="entry-content">
                             <div class="woocommerce">
-                                <form  name="checkout" class="checkout woocommerce-checkout"
-                                      enctype="multipart/form-data">
+
+
+                                <form id="order" method="post" action="{{route('checkout')}}">
 
                                     @csrf
-                                    <div class="col2-set" id="customer_details">
+                                    <div class="col2-set" id="customer_details" >
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
                                                 <h3>Детали доставки:</h3>
@@ -244,8 +245,12 @@
                                                 {{--<label for="terms" class="checkbox">I&rsquo;ve read and accept the <a href="terms-and-conditions.html" target="_blank">terms &amp; conditions</a> <span class="required">*</span></label>--}}
                                                 {{--<input type="hidden" name="terms-field" value="1" />--}}
                                                 {{--</p>--}}
-                                                <a class="button alt"  href="{{route('checkout')}}"
-                                                   style="text-align: center;">Оформить заказ</a>
+                                                {{--<button formaction="{{route('checkout')}}" formmethod="post" name="order" type="submit"> Оформить заказ </button>--}}
+                                                <a href="#" style="text-align: center;"
+                                                   onclick="document.getElementById('order').submit()"
+                                                   type="submit" class="button"
+                                                   name="order" value="Оформить заказ"> Оформить заказ</a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -254,6 +259,7 @@
                         </div>
                         <!-- .entry-content -->
                     </div>
+        </div>
                     <!-- #post-## -->
                 </main>
                 <!-- #main -->

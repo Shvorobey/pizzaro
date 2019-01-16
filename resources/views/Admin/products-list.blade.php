@@ -32,7 +32,7 @@
                     <input type="hidden" name="id" value="{{$product->id}}"/>
                     <input type="submit" value="Удалить"/>
                 </form></td>
-            <td> <form method="GET" action="/admin/form/update/">
+            <td> <form method="GET" action="{{route('form-action-update')}}">
                     @csrf
 
                     <input type="hidden" name="id" value="{{$product->id}}"/>

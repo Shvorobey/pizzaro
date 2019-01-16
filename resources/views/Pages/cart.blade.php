@@ -31,7 +31,8 @@
                     <div id="post-8" class="post-8 page type-page status-publish hentry">
                         <div class="entry-content">
                             <div class="woocommerce">
-                                <form>
+                                <form id="checkout" method="post" action="{{route('update-cart')}}">
+                                    @csrf
                                     <table class="shop_table shop_table_responsive cart">
                                         <thead>
                                         <tr>
@@ -102,7 +103,9 @@
 
 
                                                 <div class="wc-proceed-to-checkout">
-                                                    <a href="{{route('update-cart')}}" type="submit" class="button"
+                                                    <a href="#"
+                                                       onclick="document.getElementById('checkout').submit()"
+                                                       type="submit" class="button"
                                                        name="update_cart" value="Обновить корзину"> Обновить
                                                         корзину </a>
                                                     <a href="{{route('checkout')}}"
