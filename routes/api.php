@@ -35,6 +35,19 @@ Route::get('/blog/single_post/{id}', function ($id) {
 });
 
 Route::post('/blog', function (Request $request) {
+
+    $rules = [
+        'user_id' => 'required|integer',
+        'title' => 'required|max:35|min:3',
+        'body' => 'required|max:1000|min:25',
+        'cover' => 'required|image',
+    ];
+    /** @var \Illuminate\Support\Facades\Validator */
+    $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules);
+
+    if ($validator->fails()) {
+        return response()->json($validator->errors(), 400);
+    }
     $post = new \App\Post();
     $post->user_id = $request->post('user_id');
     $post->title = $request->post('title');
@@ -49,6 +62,18 @@ Route::put('/blog/{id}', function (Request $request, $id) {
         $post = \App\Post::findOrFail($id);
     } catch (\Exception $exception) {
         return response()->json(null, 404);
+    }
+    $rules = [
+        'user_id' => 'required|integer',
+        'title' => 'required|max:35|min:3',
+        'body' => 'required|max:1000|min:25',
+        'cover' => 'required|image',
+    ];
+    /** @var \Illuminate\Support\Facades\Validator */
+    $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules);
+
+    if ($validator->fails()) {
+        return response()->json($validator->errors(), 400);
     }
     $post->user_id = $request->post('user_id');
     $post->title = $request->post('title');
