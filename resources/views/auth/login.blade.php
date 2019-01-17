@@ -56,6 +56,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Вход') }}
                                 </button>
+                                <script>
+                                    grecaptcha.ready(function() {
+                                        grecaptcha.execute('6LekfYoUAAAAAKsApsIP1j9PD3eCjCVLHi3yW5gZ', {action: 'action_name'})
+                                            .then(function(token) {
+// Verify the token on the server.
+                                            });
+                                    });
+                                </script>
 
                                 {{--@if (Route::has('password.request'))--}}
                                     {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}

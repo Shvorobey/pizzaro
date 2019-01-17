@@ -15,6 +15,9 @@ class ShowCartAction extends Controller
      */
     public function __invoke(Request $request)
     {
+        //\Cart::clear();
+//        dd(\Cart::getContent());
+
 
         return view('pages.cart');
 
@@ -28,6 +31,6 @@ class ShowCartAction extends Controller
 //                $totalitems++;
 //            }
 //        }
-//        return view('pages.cart', ['items' => $items, 'total' => $total, 'totalitems' => $totalitems]);
+//     return view('pages.cart');
     }
 }

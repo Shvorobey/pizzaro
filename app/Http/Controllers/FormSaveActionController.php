@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Adapter\Logger\LoggerInterface;
 use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
 
 class FormSaveActionController extends Controller
 {
-    public function __construct()
+    protected $logger;
+    public function __construct(LoggerInterface $logger)
     {
         $this->middleware('auth');
+        $this->logger = $logger;
     }
 
     public function __invoke(Request $request)
@@ -35,6 +38,7 @@ class FormSaveActionController extends Controller
                     $product->image = 'http://pizzaro/images/' . $imageName;
                 }
                 $product->save();
+                $this->logger->info(' Продукт'. ' ' . $product->name .' '. 'создан ');
             }
 
         return view('admin/form-new', ['menu'=>Menu::all()]);

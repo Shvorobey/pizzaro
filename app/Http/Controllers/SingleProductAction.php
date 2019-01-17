@@ -21,15 +21,15 @@ class SingleProductAction extends Controller
         $menus = $products->menu();
 
 
-        $items = session()->get('cart');
-        $total = 0;
-        $totalitems = 0;
-        if ($items != null) {
-            foreach ($items as $item) {
-                $total += $item->price;
-                $totalitems++;
-            }
-        }
-        return view('pages/single-product', ['menus' => $menus, 'product' => $products, 'items' => $items, 'total' => $total, 'totalitems' => $totalitems]);
+//        $items = session()->get('cart');
+//        $total = 0;
+//        $totalitems = 0;
+//        if ($items != null) {
+//            foreach ($items as $item) {
+//                $total += $item->price;
+//                $totalitems++;
+//            }
+//        }
+        return view('pages/single-product', ['menus' => $menus, 'product' => $products, 'items' => $items]);
     }
 }

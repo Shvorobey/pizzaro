@@ -4,22 +4,28 @@
 namespace App\Http\Controllers;
 
 
+use App\Adapter\Logger\LoggerInterface;
 use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
 
 class FormUpdateActionController extends Controller
 {
-    public function __construct()
+
+    protected $logger;
+
+    public function __construct(LoggerInterface $logger)
     {
         $this->middleware('auth');
+        $this->logger = $logger;
     }
 
     public function __invoke(Request $request)
     {
+
         if ($request->method() == 'POST') {
             $this->validate($request, [
-                'name' => 'required | max: 150 | string | unique:products,name',
+                'name' => 'required | max: 150 | string ',
                 'description' => 'required | min: 30 | string',
                 'image' => 'image | dimensions: min_width=370, min_height=330 |  file',
             ]);
@@ -36,7 +42,9 @@ class FormUpdateActionController extends Controller
                 $product->image = 'http://pizzaro/images/' . $imageName;
             }
             $product->save();
-        } else {
+
+        } else
+            {$this->logger->info(' Продукт'. ' ' . ' '. 'обновлен ');
             $product = Product::find($request->get('id'));
         }
         return view('admin.form-update', ['menu' => Menu::all(), 'product' => $product]);
