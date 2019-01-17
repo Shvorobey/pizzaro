@@ -22,12 +22,15 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/blog', function () {
-    return response()->json(\App\Post:: paginate(5), 200);
+
+    $post = \App\Post:: paginate(5);
+
+    return response()->json($post, 200);
 });
 
 Route::get('/blog/single_post/{id}', function ($id) {
     try {
-        $post = \App\Post::findOrFail($id);
+        $post = new App\Http\Resources\PostResource (\App\Post::findOrFail($id));
     } catch (\Exception $exception) {
         return response()->json(null, 404);
     }
