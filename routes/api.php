@@ -95,3 +95,13 @@ Route::delete('/blog/{id}', function (Request $request, $id) {
     $post->delete();
     return response()->json(null, 204);
 });
+
+Route::get('/blog/posts_by_autor/{id}', function ($id) {
+    try {
+        $post = \App\Post::where( 'user_id', '=', $id)->get ();
+    } catch (\Exception $exception) {
+        return response()->json(null, 404);
+    }
+    return response()->json($post, 200);
+});
+
