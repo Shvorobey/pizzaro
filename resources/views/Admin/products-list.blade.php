@@ -19,7 +19,9 @@
 </head>
 <body id="top" class="@yield ('body-classes')">
 <div id="page" class="hfeed site">
-    Вы вошли под именем: <strong>{{Auth::user()->name}}</strong>
+
+    Вы вошли под именем:  <h1 style="color:#0000ff"><strong>{{\Auth::user()->name}}</strong></h1>
+    <p><a href="{{route('home')}}"><img src="http://pizzaro/assets/images/sidebar-about-2.png"  alt="На главную"></a></p>
 <table>
     @foreach($products as $product)
 
