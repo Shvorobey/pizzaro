@@ -22,11 +22,16 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/blog', function () {
-    return response()->json(\App\Post:: all(), 200);
+    return response()->json(\App\Post:: paginate(5), 200);
 });
 
 Route::get('/blog/single_post/{id}', function ($id) {
-    return response()->json(\App\Post:: find($id), 200);
+    try {
+        $post = \App\Post::findOrFail($id);
+    } catch (\Exception $exception) {
+        return response()->json(null, 404);
+    }
+    return response()->json($post, 200);
 });
 
 Route::post('/blog', function (Request $request) {
@@ -40,7 +45,11 @@ Route::post('/blog', function (Request $request) {
 });
 
 Route::put('/blog/{id}', function (Request $request, $id) {
-    $post = \App\Post::find($id);
+    try {
+        $post = \App\Post::findOrFail($id);
+    } catch (\Exception $exception) {
+        return response()->json(null, 404);
+    }
     $post->user_id = $request->post('user_id');
     $post->title = $request->post('title');
     $post->body = $request->post('body');
@@ -50,7 +59,11 @@ Route::put('/blog/{id}', function (Request $request, $id) {
 });
 
 Route::delete('/blog/{id}', function (Request $request, $id) {
-    $post = \App\Post::find($id);
+    try {
+        $post = \App\Post::findOrFail($id);
+    } catch (\Exception $exception) {
+        return response()->json(null, 404);
+    }
     $post->delete();
     return response()->json(null, 204);
 });
