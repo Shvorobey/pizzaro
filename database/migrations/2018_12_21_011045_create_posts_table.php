@@ -13,6 +13,8 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+        \Illuminate\Support\Facades\DB::statement('ALTER TABLE posts ADD FULLTEXT search(title)');
+
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
@@ -33,4 +35,6 @@ class CreatePostsTable extends Migration
     {
         Schema::dropIfExists('posts');
     }
+
+
 }

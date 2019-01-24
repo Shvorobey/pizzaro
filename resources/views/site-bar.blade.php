@@ -19,13 +19,27 @@
     </div>
     <div id="search-2" class="widget widget_search">
         <hr>
-        <form role="search" method="get" class="search-form" action="blog-single.html">
-            <label>
-                <span class="screen-reader-text">Search for:</span>
-                <input type="search" class="search-field" placeholder="Найти..." value="" name="s"/>
-            </label>
-            <input type="submit" class="search-submit" value="Search"/>
+        <form role="search" action="{{route('searchSimple')}}" method="GET" class="search-form">
+            <div class="row">
+                <div class="col-xs-10">
+                    <div class="form-group">
+                        <input type="text" class="search-field" name="q" placeholder="Найти в блогах" value="{{ old('q') }}" required>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <div class="form-group">
+                        <input class="btn btn-info" type="submit" class="search-submit" value="Искать">
+                    </div>
+                </div>
+            </div>
         </form>
+        {{--<form role="search" method="get" class="search-form" action="blog-single.html">--}}
+            {{--<label>--}}
+                {{--<span class="screen-reader-text">Search for:</span>--}}
+                {{--<input type="search" class="search-field" placeholder="Найти..." value="" name="s"/>--}}
+            {{--</label>--}}
+            {{--<input type="submit" class="search-submit" value="Search"/>--}}
+        {{--</form>--}}
         <hr>
     </div>
     <div id="tag_cloud-2" class="widget widget_tag_cloud">

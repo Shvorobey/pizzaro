@@ -72,3 +72,5 @@ Route::match(['delete'], '/admin/products-delete', function (\Illuminate\Http\Re
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('admin');
+
+Route::get('searchSimple', 'SearchController@index')->name('searchSimple');
