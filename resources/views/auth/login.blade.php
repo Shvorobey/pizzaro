@@ -53,6 +53,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
+                                {{--{!! \Biscolab\ReCaptcha\Facades\ReCaptcha::htmlFormSnippet() !!}--}}
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Вход') }}
                                 </button>
@@ -65,11 +66,11 @@
                                     });
                                 </script>
 
-                                {{--@if (Route::has('password.request'))--}}
-                                    {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
-                                        {{--{{ __('Забыли пароль?') }}--}}
-                                    {{--</a>--}}
-                                {{--@endif--}}
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Забыли пароль?') }}
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </form>
