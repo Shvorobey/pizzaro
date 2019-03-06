@@ -46,50 +46,51 @@
                                         </thead>
                                         <tbody>
                                         @if ((!Cart::isEmpty()))
-                                        @foreach(\Cart::getContent () as $item)
-                                            <tr class="cart_item">
-                                                <td class="product-remove">
-                                                    <a href="{{ route('remove-from-cart', $item->id) }}" class="remove">&times;</a>
-                                                </td>
-                                                <td class="product-thumbnail">
-                                                    <a href="single-product-v1.html">
-                                                        <img width="180" height="180"
-                                                             src="{{$item->attributes->image}}" alt=""/>
-                                                    </a>
-                                                </td>
-                                                <td class="product-name" data-title="Product">
-                                                    <a href="single-product-v1.html">{{$item->name}}</a>
-                                                    <dl class="variation">
-                                                        <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
-                                                            Количество (размер):
-                                                        </dt>
-                                                        <dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
-                                                            <p>{{$item->attributes->size}}  {{$item->attributes->dimension}}</p>
-                                                        </dd>
-                                                    </dl>
-                                                </td>
-                                                <td class="product-price" data-title="Price">
+                                            @foreach(\Cart::getContent () as $item)
+                                                <tr class="cart_item">
+                                                    <td class="product-remove">
+                                                        <a href="{{ route('remove-from-cart', $item->id) }}"
+                                                           class="remove">&times;</a>
+                                                    </td>
+                                                    <td class="product-thumbnail">
+                                                        <a href="single-product-v1.html">
+                                                            <img width="180" height="180"
+                                                                 src="{{$item->attributes->image}}" alt=""/>
+                                                        </a>
+                                                    </td>
+                                                    <td class="product-name" data-title="Product">
+                                                        <a href="single-product-v1.html">{{$item->name}}</a>
+                                                        <dl class="variation">
+                                                            <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
+                                                                Количество (размер):
+                                                            </dt>
+                                                            <dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
+                                                                <p>{{$item->attributes->size}}  {{$item->attributes->dimension}}</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </td>
+                                                    <td class="product-price" data-title="Price">
                                                         <span class="woocommerce-Price-amount amount"><span
                                                                     class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span>
-                                                </td>
-                                                <td class="product-quantity" data-title="Quantity">
-                                                    <div class="qty-btn">
-                                                        <label>Quantity</label>
-                                                        <div class="quantity">
-                                                            <input type="number" name="items [{{$item->id}}]"
-                                                                   value="{{$item->quantity}}" title="Qty"
-                                                                   class="input-text qty text"/>
+                                                    </td>
+                                                    <td class="product-quantity" data-title="Quantity">
+                                                        <div class="qty-btn">
+                                                            <label>Quantity</label>
+                                                            <div class="quantity">
+                                                                <input type="number" name="items [{{$item->id}}]"
+                                                                       value="{{$item->quantity}}" title="Qty"
+                                                                       class="input-text qty text"/>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td class="product-subtotal" data-title="Total">
+                                                    </td>
+                                                    <td class="product-subtotal" data-title="Total">
                                                     <span class="woocommerce-Price-amount amount"><span
                                                                 class="woocommerce-Price-currencySymbol"></span>{{$item->getPriceSum ()}} грн.</span>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         @else
-                                        <h3>В Вашей корзине нет заказов</h3>
+                                            <h3>В Вашей корзине нет заказов</h3>
                                         @endif
                                         <tr>
                                             <td colspan="6" class="actions">

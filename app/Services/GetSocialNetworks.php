@@ -16,6 +16,7 @@ final class GetSocialNetworks
 
 {
     use SoftDeletes;
+
     public function getSocialNetworks()
     {
         return SocialNetworks::all();

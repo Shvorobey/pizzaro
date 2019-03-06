@@ -14,6 +14,7 @@
         "fideloper/proxy": "^4.0",
         "katzgrau/klogger": "dev-master",
         "laravel/framework": "5.7.*",
+        "laravel/horizon": "^3.0",
         "laravel/tinker": "^1.0",
         "monolog/monolog": "^1.24"
     },
@@ -28,7 +29,11 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "ext-pcntl": "7.2",
+            "ext-posix": "7.2"
+        }
     },
     "extra": {
         "laravel": {

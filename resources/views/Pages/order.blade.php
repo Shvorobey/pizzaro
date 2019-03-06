@@ -40,7 +40,10 @@
                                 <ul class="woocommerce-thankyou-order-details order_details">
                                     <li class="order">Номер заказа:<strong>{{$order->id}}</strong></li>
                                     <li class="date">Время:<strong>{{$order->created_at}}</strong></li>
-                                    <li class="total">К оплате:<strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{\Cart::getTotal ()}} грн.</span></strong></li>
+                                    <li class="total">К оплате:<strong><span
+                                                    class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol"></span>{{\Cart::getTotal ()}} грн.</span></strong>
+                                    </li>
                                     {{--<li class="method">Payment Method:<strong>Direct Bank Transfer</strong></li>--}}
                                 </ul>
                                 <div class="clear"></div>
@@ -101,24 +104,25 @@
                                     </tfoot>
                                 </table>
                                 <header>
-                                <h2>Контактные данные заказчика:</h2>
+                                    <h2>Контактные данные заказчика:</h2>
                                 </header>
                                 <table class="shop_table customer_details">
-                                <tbody>
-                                <tr>
-                                <th>Email:</th>
-                                <td>{{$order->email}}</td>
-                                </tr>
-                                <tr>
-                                <th>Телефон:</th>
-                                <td>{{$order->phone}}</td>
-                                </tr>
-                                </tbody>
+                                    <tbody>
+                                    <tr>
+                                        <th>Email:</th>
+                                        <td>{{$order->email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Телефон:</th>
+                                        <td>{{$order->phone}}</td>
+                                    </tr>
+                                    </tbody>
                                 </table>
                                 <header class="title">
-                                <h3>Адрес для доставки:</h3>
+                                    <h3>Адрес для доставки:</h3>
                                 </header>
-                                <address><br>{{$order->first_name}} {{$order->last_name}}<br>{{$order->address}}<br>{{$order->notes}}<br></address>
+                                <address><br>{{$order->first_name}} {{$order->last_name}}<br>{{$order->address}}
+                                    <br>{{$order->notes}}<br></address>
 
                             </div>
                         </div>

@@ -14,8 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700"
           rel="stylesheet">
     <link rel="shortcut icon" href="/assets/images/fav-icon.png">
-
-
 </head>
 <body id="top" class="@yield ('body-classes')">
 <div id="page" class="hfeed site">
@@ -28,15 +26,12 @@
 
 @include ('random-food')
 
-
-
 {{--@yield ('subscribed')--}}
 
 @include ('footer')
 
 <!-- #colophon -->
 </div>
-
 
 </body>
 </html>

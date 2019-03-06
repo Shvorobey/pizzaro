@@ -76,6 +76,7 @@
                                         <div class="banner-bg"
                                              style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/1.jpg ); height: 442px;">
                                             <div class="caption">
+
                                                 <h3 class="title">GRILLED CHICKEN</h3>
                                                 <h4 class="subtitle">SUMMER PIZZA</h4>
                                                 <span class="button">HOT &amp; SPICY</span>

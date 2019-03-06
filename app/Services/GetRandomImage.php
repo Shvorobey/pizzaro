@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\RandomImage;
 use SoftDeletes;
+
 final class GetRandomImage
 
 

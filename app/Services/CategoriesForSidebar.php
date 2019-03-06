@@ -13,7 +13,7 @@ final class CategoriesForSidebar
         foreach (Category::distinct()->get(['categories', 'key']) as $category) {
 
 
-            echo '<a href=" '. route('posts-by-category' , $category->key) . '">' . $category->categories . '</a> ';
+            echo '<a href=" ' . route('posts-by-category', $category->key) . '">' . $category->categories . '</a> ';
         }
 
 

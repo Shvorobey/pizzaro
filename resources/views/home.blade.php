@@ -14,7 +14,6 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
                         Вход выполнен успешно!
                     </div>
                 </div>

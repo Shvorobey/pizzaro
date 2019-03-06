@@ -13,7 +13,6 @@
             </span>
         </div>
 
-
         <div class="footer-logo">
             <a href="{{route('home')}}" class="custom-logo-link" rel="home">
                 <svg class="pizzaro-logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"

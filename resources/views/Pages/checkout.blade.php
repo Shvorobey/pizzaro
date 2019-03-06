@@ -4,7 +4,6 @@
 
 @section('content')
 
-
     <div id="content" class="site-content" tabindex="-1">
         <div class="col-full">
             <div class="pizzaro-breadcrumb">
@@ -36,7 +35,7 @@
                                 <form id="order" method="post" action="{{route('checkout')}}">
 
                                     @csrf
-                                    <div class="col2-set" id="customer_details" >
+                                    <div class="col2-set" id="customer_details">
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
                                                 <h3>Детали доставки:</h3>
@@ -84,28 +83,11 @@
                                                            id="billing_address_1" placeholder="Улица, дом, квартира"
                                                            autocomplete="address-line1" value=""/>
                                                 </p>
-                                                {{--<p class="form-row form-row form-row-wide address-field"--}}
-                                                   {{--id="billing_address_2_field">--}}
-                                                    {{--<input type="text" class="input-text " name="billing_address_2"--}}
-                                                           {{--id="billing_address_2" placeholder="Дом/квартира"--}}
-                                                           {{--autocomplete="address-line2" value=""/>--}}
-                                                {{--</p>--}}
 
-                                                {{--<p class="form-row form-row form-row-last address-field validate-required validate-postcode" id="billing_postcode_field">--}}
-                                                {{--<label for="billing_postcode" class="">Postcode / ZIP </label>--}}
-                                                {{--<input type="text" class="input-text " name="billing_postcode" id="billing_postcode" placeholder=""  autocomplete="postal-code" value="DFSAF@GMAIL.COM"  />--}}
-                                                {{--</p>--}}
                                                 <div class="clear"></div>
-                                                {{--<p class="form-row form-row-wide create-account">--}}
-                                                {{--<input class="input-checkbox" id="createaccount"  type="checkbox" name="createaccount" value="1" />--}}
-                                                {{--<label for="createaccount" class="checkbox">Создать аккаунт?</label>--}}
-                                                {{--</p>--}}
+
                                                 <div class="create-account">
-                                                    {{--<p>Создайте аккаунт, введя информацию ниже. Если вы уже зарегистрированы, пожалуйста, войдите в систему вверху страницы.</p>--}}
-                                                    {{--<p class="form-row form-row validate-required" id="account_password_field">--}}
-                                                    {{--<label for="account_password" class="">Account password </label>--}}
-                                                    {{--<input type="password" class="input-text " name="account_password" id="account_password" placeholder="Password"   value=""  />--}}
-                                                    {{--</p>--}}
+
                                                     <div class="clear"></div>
                                                 </div>
                                             </div>
@@ -138,45 +120,33 @@
                                                     <tr class="cart_item">
                                                         <td class="product-name">
                                                             <strong>{{$item->name}} </strong>
-                                                            &nbsp;<strong class="product-quantity" >x {{$item->quantity}}</strong>
+                                                            &nbsp;<strong
+                                                                    class="product-quantity">x {{$item->quantity}}</strong>
                                                             <dl class="variation">
-                                                                <dt class="variation-Baseprice">Цена за еденицу: {{$item->price}} грн.</dt>
-                                                                {{--<dl class="variation">--}}
-                                                                    {{--<dt class="variation-Baseprice">Итого: {{$item->getPriceSum ()}} грн.</dt>--}}
-
-                                                                {{--<dd class="variation-Baseprice">--}}
-                                                                    {{--<p>--}}
-                                                                        {{--<span class="woocommerce-Price-amount amount"><span--}}
-                                                                                    {{--class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span>--}}
-                                                                    {{--</p>--}}
-                                                                {{--</dd>--}}
-                                                                <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
-                                                                    Количество (размер): {{$item->attributes->size}}  {{$item->attributes->dimension}}
+                                                                <dt class="variation-Baseprice">Цена за
+                                                                    еденицу: {{$item->price}} грн.
                                                                 </dt>
-                                                                {{--<dd class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">--}}
-                                                                    {{--<p>{{$item->attributes->size}}  {{$item->attributes->dimension}}</p>--}}
-                                                                {{--</dd>--}}
+
+                                                                <dt class="variation-PickSizespanclasswoocommerce-Price-amountamountspanclasswoocommerce-Price-currencySymbol36span2590span">
+                                                                    Количество
+                                                                    (размер): {{$item->attributes->size}}  {{$item->attributes->dimension}}
+                                                                </dt>
+
                                                             </dl>
                                                         <td class="product-total">
                                                 <span class="woocommerce-Price-amount amount">
                                                 <span class="woocommerce-Price-currencySymbol"></span>{{$item->getPriceSum ()}} грн.</span>
                                                         </td>
                                                     </tr>
-                                                            @endforeach
-                                                            @else
-                                                                <h3>В Вашей корзине нет заказов</h3>
-                                                            @endif
-                                                        </td>
+                                                @endforeach
+                                            @else
+                                                <h3>В Вашей корзине нет заказов</h3>
+                                                @endif
+                                                </td>
 
                                             </tbody>
                                             <tfoot>
-                                            {{--<tr class="cart-subtotal">--}}
-                                            {{--<th>Subtotal</th>--}}
-                                            {{--<td>--}}
-                                            {{--<span class="woocommerce-Price-amount amount">--}}
-                                            {{--<span class="woocommerce-Price-currencySymbol">&#36;</span>{{\Cart::getSubTotal()}}</span>--}}
-                                            {{--</td>--}}
-                                            {{--</tr>--}}
+
                                             <tr class="order-total">
                                                 <th>К оплате:</th>
                                                 <td>
@@ -259,14 +229,14 @@
                         </div>
                         <!-- .entry-content -->
                     </div>
-        </div>
-                    <!-- #post-## -->
-                </main>
-                <!-- #main -->
             </div>
-            <!-- #primary -->
+            <!-- #post-## -->
+            </main>
+            <!-- #main -->
         </div>
-        <!-- .col-full -->
+        <!-- #primary -->
+    </div>
+    <!-- .col-full -->
     </div>
     <!-- #content -->
 
