@@ -4,67 +4,12 @@
 
 @section('content')
 
-
     <div id="content" class="site-content" tabindex="-1">
         <div class="col-full">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <div class="home-v1-slider">
                         <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-                        {{--<div class="item slider-1"--}}
-                        {{--style="background-image: url(/assets/images/slider/homepage-slider-1.jpg);">--}}
-                        {{--<div class="caption fadeIn">--}}
-                        {{--<div class="pre-title">--}}
-                        {{--<div class="border front"></div>--}}
-                        {{--<div class="lable">New!</div>--}}
-                        {{--<div class="pre-title-value">LIMITED TIME OFFER</div>--}}
-                        {{--<div class="border back"></div>--}}
-                        {{--</div>--}}
-                        {{--<div class="title">SUPREME BBQ</div>--}}
-                        {{--<div class="sub-title">CHICKEN</div>--}}
-                        {{--<div class="bottom-caption">Bacon - Grilled Onions - Potatos - Mozarella - BBQ--}}
-                        {{--Sau TIce--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        <!-- /.caption -->
-                        {{--</div>--}}
-                        <!-- /.item -->
-                        {{--<div class="item slider-2"--}}
-                        {{--style="background-image: url(https://ilmolino.ua/img/article/11/51_main.jpg);">--}}
-                        {{--<div class="caption fadeIn">--}}
-                        {{--<div class="price-tag">--}}
-                        {{--<div class="border front"></div>--}}
-                        {{--<div class="price-tag-value">--}}
-                        {{--<div class="price"><span class="symbol">$</span>12<span--}}
-                        {{--class="slider-amount">99<br><span class="price-only">only</span></span>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="border back"></div>--}}
-                        {{--</div>--}}
-                        {{--<div class="title">ORYGINAL ITALY</div>--}}
-                        {{--<div class="sub-title">PIZZA LOVERS SET</div>--}}
-                        {{--</div>--}}
-                        {{--<!-- /.caption -->--}}
-                        {{--</div>--}}
-                        <!-- /.item -->
-                        {{--<div class="item slider-3"--}}
-                        {{--style="background-image: url(https://cdn.cobone.com/deals/uae/pizzaro/2015/big-pizzaro-pizza1-rev1.jpg?v=80);">--}}
-                        {{--<div class="caption fadeIn">--}}
-                        {{--<div class="pre-title">САМЫЕ ВКУСНЫЕ ЕДА И НАПИТКИ ТУТ</div>--}}
-                        {{--<div class="title">сделаи<span>свой<br>заказ</span>online</div>--}}
-                        {{--</div>--}}
-                        {{--<!-- /.caption -->--}}
-                        {{--</div>--}}
-                        <!-- /.item -->
-                        {{--<div class="item slider-4"--}}
-                        {{--style="background-image: url(assets/images/slider/homepage-slider-4.jpg);">--}}
-                        {{--<div class="caption fadeIn">--}}
-                        {{--<div class="pre-title">EXCLUSIVE OFFER</div>--}}
-                        {{--<div class="title"><span>VEGGIE FUN</span><br>DELICIOUS SUMMER!</div>--}}
-                        {{--</div>--}}
-                        {{--<!-- /.caption -->--}}
-                        {{--</div>--}}
-                        <!-- /.item -->
                         </div>
                         <!-- /.owl-carousel -->
                     </div>
@@ -94,37 +39,6 @@
                     </div>
             </div>
         </div>
-        <div class="stretch-full-width section-products-sale-event"
-             style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/5.jpg ); height: 468px;">
-            <div class="sale-event-content">
-                <h3 class="pre-title"><span>FREE DELIVERY WITH</span></h3>
-                <h2 class="section-title">PIZZA OF THE DAY</h2>
-                <div class="sale-event-products">
-                    <div class="products-price">
-                                    <span class="price"><span class="currency"> &#36;</span>9<span
-                                                class="decimals">99</span><span class="price-info">EACH</span></span>
-                    </div>
-                    <ul class="products-info">
-                        <li>
-                            <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                <h3>Vegge Lover</h3>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                <h3>Summer Pizza</h3>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
-                                <h3>Chicken Hawaii</h3>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <a href="single-product-v1.html" class="button">Order Now</a>
-            </div>
-        </div>
         <div class="section-products">
             <h2 class="section-title">Попробуйте сегодня</h2>
 
@@ -139,12 +53,11 @@
                                 <div class="product-inner">
 
                                     <div class="product-image-wrapper">
-                                        <a href="single-product-v1.html"
+                                        <a href="{{route('single-product', $product->id)}}"
                                            class="woocommerce-LoopProduct-link">
                                             <img src="{{$product->image}}" class="img-responsive" alt="">
                                         </a>
                                     </div>
-
                                     <div class="product-content-wrapper">
                                         <a href="{{route('single-product', $product->id)}}"
                                            class="woocommerce-LoopProduct-link">
@@ -160,7 +73,6 @@
                                                     @foreach($product->items as $item)
                                                         <a href="{{route('add-to-cart', $item->id)}}">
                                                             <div class="ywapo_input_container ywapo_input_container_radio">
-
                                                                             <span class="ywapo_label_tag_position_after"><span
                                                                                         class="ywapo_option_label ywapo_label_position_after">{{$item->size}} {{$item->dimension}}</span></span>
                                                                 <span class="ywapo_label_price"><span
@@ -168,15 +80,14 @@
                                                                                 class="woocommerce-Price-currencySymbol"></span>{{$item->price}}</span></span>
                                                             </div>
                                                     @endforeach
-
+                                                        </a>
                                                 </div>
                                             </div>
                                         </a>
                                         <div class="hover-area">
-                                            <a rel="nofollow" href="single-product-v1.html"
+                                            <a rel="nofollow" href="{{route('single-product', $product->id)}}"
                                                data-quantity="1" data-product_id="51" data-product_sku=""
-                                               class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
-                                                to cart</a>
+                                               class="button product_type_simple add_to_cart_button ajax_add_to_cart">Подробнее</a>
                                         </div>
                                     </div>
 
@@ -193,7 +104,8 @@
              style="background-size: cover; background-image: url( assets/images/homepage-banners/6.png ); height: 556px;">
             <div class="product-wrapper">
                 <div class="product-inner">
-                    <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                    @inject ('singleProduct', '\App\Services\dayProducts' )
+                    <a href="{{route('single-product', $singleProduct->getSingleProducts()->id)}}" class="woocommerce-LoopProduct-link">
                         <h3>Pepperoni Pizza</h3>
                         <div itemprop="description">
                             <p>Extra-virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green
@@ -266,9 +178,7 @@
         </main>
         @include('subscribed')
     </div>
-
     </div>
-    <!-- .col-full -->
-    </div>
+       </div>
 @endsection
 

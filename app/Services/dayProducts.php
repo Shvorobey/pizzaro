@@ -14,10 +14,16 @@ use App\Product;
 class dayProducts
 {
     public $dayProducts;
+    public $singleProduct;
 
     public function getDayProducts()
     {
         $dayProducts = Product:: whereIn('id', [10, 25, 30, 40])->get();
         return $dayProducts;
+    }
+    public function getSingleProducts()
+    {
+        $singleProduct = Product:: whereIn('id', [12])->get();
+        return $singleProduct;
     }
 }
