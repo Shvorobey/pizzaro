@@ -46,7 +46,6 @@
 
                 <ul class="products">
                     @inject ('products', '\App\Services\RandomProductsService' )
-
                     @foreach($products->getRandomProducts() as $product)
                         <li class="product @if ($loop->first) first @endif @if ($loop->last) last @endif">
                             <div class="product-outer">
@@ -79,7 +78,7 @@
                                                                             class="woocommerce-Price-amount amount"><span
                                                                                 class="woocommerce-Price-currencySymbol"></span>{{$item->price}}</span></span>
                                                             </div>
-                                                    @endforeach
+                                                            @endforeach
                                                         </a>
                                                 </div>
                                             </div>
@@ -105,80 +104,79 @@
             <div class="product-wrapper">
                 <div class="product-inner">
                     @inject ('singleProduct', '\App\Services\dayProducts' )
-                    <a href="{{route('single-product', $singleProduct->getSingleProducts()->id)}}" class="woocommerce-LoopProduct-link">
-                        <h3>Pepperoni Pizza</h3>
-                        <div itemprop="description">
-                            <p>Extra-virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green
-                                olives, black olives, fresh tomatoes.</p>
-                        </div>
-                        <div class="yith_wapo_groups_container">
-                            <div class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide "
-                                 data-requested="1" data-type="radio" data-id="1" data-condition="">
-                                <h3><span>Pick Size</span></h3>
-                                <div class="ywapo_input_container ywapo_input_container_radio">
-
-                                          <span class="ywapo_label_tag_position_after">
-                                          <span class="ywapo_option_label ywapo_label_position_after">22  cm</span>
-                                      </span>
-                                    <span class="ywapo_label_price"><span
-                                                class="woocommerce-Price-amount amount"><span
-                                                    class="woocommerce-Price-currencySymbol">&#36;</span>19.90</span></span>
-                                </div>
-                                <div class="ywapo_input_container ywapo_input_container_radio">
-
-                                          <span class="ywapo_label_tag_position_after">
-                                          <span class="ywapo_option_label ywapo_label_position_after">29  cm</span>
-                                      </span>
-                                    <span class="ywapo_label_price"> <span
-                                                class="woocommerce-Price-amount amount"><span
-                                                    class="woocommerce-Price-currencySymbol">&#36;</span>25.90</span></span>
-                                </div>
+                    @foreach($singleProduct->getSingleProduct() as $prod)
+                        <a href="{{route('single-product', $prod->id)}}" class="woocommerce-LoopProduct-link">
+                            <h3>{{$prod->name}}</h3>
+                            <div itemprop="description">
+                                <p>{{$prod->description}}</p>
                             </div>
-                        </div>
-                    </a>
-                    <a rel="nofollow" href="single-product-v1.html" data-quantity="1" data-product_id="82"
-                       data-product_sku=""
-                       class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to
-                        cart</a>
+                            <div class="yith_wapo_groups_container">
+                                <div class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide "
+                                     data-requested="1" data-type="radio" data-id="1" data-condition="">
+                                </div>
+                                <h3><span>Выберите размер</span></h3>
+                                @foreach($prod->items as $item)
+                                    <div class="ywapo_input_container ywapo_input_container_radio">
+                                        <a href="{{route('add-to-cart', $item->id)}}">
+                                                <span class="ywapo_label_tag_position_after">
+                                                    <span class="ywapo_option_label ywapo_label_position_after">{{$item->size}} {{$item->dimension}}</span></span>
+                                            <span class="ywapo_label_price"><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                            class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span></span>
+                                        </a>
+
+                                        @endforeach
+                                    </div>
+                        </a>
+
+                </div>
+            </div>
+
+            <a rel="nofollow" href="{{route('single-product', $prod->id)}}" data-quantity="1"
+               data-product_id="82"
+               data-product_sku=""
+               class="button product_type_simple add_to_cart_button ajax_add_to_cart">Подробнее</a>
+            @endforeach
+        </div>
+    </div>
+    </div>
+    @include('subscribed')
+    <div class="features-list">
+        <div class="row">
+            <div class="feature col-xs-12 col-sm-3">
+                <div class="feature-icon"><i class="po po-best-quality"></i></div>
+                <div class="feature-label">
+                    <h4>Best Quality</h4>
+                    <p><strong>Качественные продукты</strong></p>
+                </div>
+            </div>
+            <div class="feature col-xs-12 col-sm-3">
+                <div class="feature-icon"><i class="po po-on-time"></i></div>
+                <div class="feature-label">
+                    <h4>On Time</h4>
+                    <p><strong>Быстрая доставка</strong></p>
+                </div>
+            </div>
+            <div class="feature col-xs-12 col-sm-3">
+                <div class="feature-icon"><i class="po po-master-chef"></i></div>
+                <div class="feature-label">
+                    <h4>MasterChefs</h4>
+                    <p><strong>Хорошие повара</strong></p>
+                </div>
+            </div>
+            <div class="feature col-xs-12 col-sm-3">
+                <div class="feature-icon"><i class="po po-ready-delivery"></i></div>
+                <div class="feature-label">
+                    <h4>Taste Food</h4>
+                    <p><strong>Отличный вкус</strong></p>
                 </div>
             </div>
         </div>
-        <div class="features-list">
-            <div class="row">
-                <div class="feature col-xs-12 col-sm-3">
-                    <div class="feature-icon"><i class="po po-best-quality"></i></div>
-                    <div class="feature-label">
-                        <h4>Best Quality</h4>
-                        <p><strong>Качественные продукты</strong></p>
-                    </div>
-                </div>
-                <div class="feature col-xs-12 col-sm-3">
-                    <div class="feature-icon"><i class="po po-on-time"></i></div>
-                    <div class="feature-label">
-                        <h4>On Time</h4>
-                        <p><strong>Быстрая доставка</strong></p>
-                    </div>
-                </div>
-                <div class="feature col-xs-12 col-sm-3">
-                    <div class="feature-icon"><i class="po po-master-chef"></i></div>
-                    <div class="feature-label">
-                        <h4>MasterChefs</h4>
-                        <p><strong>Хорошие повара</strong></p>
-                    </div>
-                </div>
-                <div class="feature col-xs-12 col-sm-3">
-                    <div class="feature-icon"><i class="po po-ready-delivery"></i></div>
-                    <div class="feature-label">
-                        <h4>Taste Food</h4>
-                        <p><strong>Отличный вкус</strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </main>
-        @include('subscribed')
+    </div>
+    </main>
+
     </div>
     </div>
-       </div>
+    </div>
 @endsection
 

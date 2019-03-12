@@ -21,9 +21,9 @@ class dayProducts
         $dayProducts = Product:: whereIn('id', [10, 25, 30, 40])->get();
         return $dayProducts;
     }
-    public function getSingleProducts()
+    public function getSingleProduct()
     {
-        $singleProduct = Product:: whereIn('id', [12])->get();
+        $singleProduct = Product:: where ('id', '9')->get();
         return $singleProduct;
     }
 }
