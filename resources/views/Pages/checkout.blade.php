@@ -11,7 +11,6 @@
                     <span class="delimiter"><i class="po po-arrow-right-slider"></i></span>Оформление заказа
                 </nav>
             </div>
-            <!-- .woocommerce-breadcrumb -->
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <div class="pizzaro-order-steps">
@@ -30,10 +29,7 @@
                     <div id="post-9" class="post-9 page type-page status-publish hentry">
                         <div class="entry-content">
                             <div class="woocommerce">
-
-
                                 <form id="order" method="post" action="{{route('checkout')}}">
-
                                     @csrf
                                     <div class="col2-set" id="customer_details">
                                         <div class="col-1">
@@ -42,16 +38,16 @@
                                                 <p class="form-row form-row form-row-first validate-required"
                                                    id="billing_first_name_field">
                                                     <label for="billing_first_name" class="">Имя: </label>
-                                                    <input type="text" class="input-text " name="billing_first_name"
+                                                    <input type="text"  class="input-text " name="billing_first_name"
                                                            id="billing_first_name" placeholder="Иван"
-                                                           autocomplete="given-name" value=""/>
+                                                           autocomplete="given-name" value="" maxlength="100" required/>
                                                 </p>
                                                 <p class="form-row form-row form-row-last validate-required"
                                                    id="billing_last_name_field">
                                                     <label for="billing_last_name" class="">Фамилия: </label>
                                                     <input type="text" class="input-text " name="billing_last_name"
                                                            id="billing_last_name" placeholder="Иванов"
-                                                           autocomplete="family-name" value=""/>
+                                                           autocomplete="family-name" value="" maxlength="100" required/>
                                                 </p>
                                                 <div class="clear"></div>
                                                 <p class="form-row form-row form-row-first validate-required validate-email"
@@ -66,14 +62,20 @@
                                                     <label for="billing_phone" class="">Телефон: </label>
                                                     <input type="tel" class="input-text " name="billing_phone"
                                                            id="billing_phone" placeholder="+38 0ХХ ХХХ ХХ ХХ"
-                                                           autocomplete="tel" value=""/>
+                                                           autocomplete="tel" value="" maxlength="13" required/>
                                                 </p>
                                                 <div class="clear"></div>
                                                 <p class="form-row form-row form-row-wide address-field update_totals_on_change validate-required"
                                                    id="billing_country_field">
                                                     <label for="billing_sity" class="">Город: </label>
                                                     <input type="text" value="" placeholder="Одесса" id="billing_sity"
-                                                           name="billing_sity" class="input-text ">
+                                                           name="billing_sity" class="input-text" maxlength="30" required
+                                                           list="sity">
+                                                    <datalist id="sity">
+                                                        <option value="Одесса">
+                                                        <option value="Киев">
+                                                        <option value="Львов">
+                                                    </datalist>
                                                 </p>
                                                 <div class="clear"></div>
                                                 <p class="form-row form-row form-row-wide address-field validate-required"
@@ -81,13 +83,10 @@
                                                     <label for="billing_address_1" class="">Адрес: </label>
                                                     <input type="text" class="input-text " name="billing_address_1"
                                                            id="billing_address_1" placeholder="Улица, дом, квартира"
-                                                           autocomplete="address-line1" value=""/>
+                                                           autocomplete="address-line1" value="" required/>
                                                 </p>
-
                                                 <div class="clear"></div>
-
                                                 <div class="create-account">
-
                                                     <div class="clear"></div>
                                                 </div>
                                             </div>
@@ -100,7 +99,7 @@
                                                     <textarea name="order_comments" class="input-text "
                                                               id="order_comments"
                                                               placeholder="Примечания о Вашем заказе, например специальные заметки для доставки."
-                                                              rows="2" cols="5"></textarea>
+                                                              rows="2" cols="5" maxlength="500"></textarea>
                                                 </p>
                                             </div>
                                         </div>
@@ -131,7 +130,6 @@
                                                                     Количество
                                                                     (размер): {{$item->attributes->size}}  {{$item->attributes->dimension}}
                                                                 </dt>
-
                                                             </dl>
                                                         <td class="product-total">
                                                 <span class="woocommerce-Price-amount amount">
@@ -143,10 +141,8 @@
                                                 <h3>В Вашей корзине нет заказов</h3>
                                                 @endif
                                                 </td>
-
                                             </tbody>
                                             <tfoot>
-
                                             <tr class="order-total">
                                                 <th>К оплате:</th>
                                                 <td>
@@ -164,16 +160,8 @@
                                                            data-order_button_text=""/>
                                                     <label for="payment_method_bacs">Оплата картой</label>
                                                     <div class="payment_box payment_method_bacs">
-                                                        {{--<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won&#8217;t be shipped until the funds have cleared in our account.</p>--}}
                                                     </div>
                                                 </li>
-                                                {{--<li class="wc_payment_method payment_method_cheque">--}}
-                                                {{--<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque"  data-order_button_text="" />--}}
-                                                {{--<label for="payment_method_cheque">Check Payments  </label>--}}
-                                                {{--<div class="payment_box payment_method_cheque" style="display:none;">--}}
-                                                {{--<p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>--}}
-                                                {{--</div>--}}
-                                                {{--</li>--}}
                                                 <li class="wc_payment_method payment_method_cod">
                                                     <input id="payment_method_cod" type="radio" class="input-radio"
                                                            name="payment_method" value="cod" data-order_button_text=""/>
@@ -210,12 +198,6 @@
                                                            name="woocommerce_checkout_update_totals"
                                                            value="Update totals"/>
                                                 </noscript>
-                                                {{--<p class="form-row terms wc-terms-and-conditions">--}}
-                                                {{--<input type="checkbox" class="input-checkbox" name="terms"  id="terms" />--}}
-                                                {{--<label for="terms" class="checkbox">I&rsquo;ve read and accept the <a href="terms-and-conditions.html" target="_blank">terms &amp; conditions</a> <span class="required">*</span></label>--}}
-                                                {{--<input type="hidden" name="terms-field" value="1" />--}}
-                                                {{--</p>--}}
-                                                {{--<button formaction="{{route('checkout')}}" formmethod="post" name="order" type="submit"> Оформить заказ </button>--}}
                                                 <a href="#" style="text-align: center;"
                                                    onclick="document.getElementById('order').submit()"
                                                    type="submit" class="button"

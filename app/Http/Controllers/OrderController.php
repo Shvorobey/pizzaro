@@ -12,20 +12,19 @@ namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
 
+
 class OrderController extends Controller
 {
     public function __invoke(Request $request)
     {
-//        dd($request->post());
-//        $this->validate($request, [
-//            'first_name' => 'required | max: 100 | string',
-//            'last_name'  => 'required | max: 100 | string',
-//            'email'      => 'e-mail',
-//            'phone'      => 'required | size=13',
-//            'address'    => 'required | max: 300',
-//            'notes'      => 'string| max: 500',
-//        ]);
-
+        $this->validate($request, [
+            'first_name' => 'required | max: 100 | string',
+            'last_name'  => 'required | max: 100 | string',
+            'email'      => 'e-mail',
+            'phone'      => 'required | size=13',
+            'address'    => 'required | max: 300',
+            'notes'      => 'string| max: 500',
+        ]);
 
         $order = new Order();
         $order -> first_name =  $request->post('billing_first_name');
