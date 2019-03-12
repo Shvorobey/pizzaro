@@ -29,12 +29,23 @@
                     <div id="post-9" class="post-9 page type-page status-publish hentry">
                         <div class="entry-content">
                             <div class="woocommerce">
+                                {{--@php (dd($errors))--}}
+
                                 <form id="order" method="post" action="{{route('checkout')}}">
                                     @csrf
                                     <div class="col2-set" id="customer_details">
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
                                                 <h3>Детали доставки:</h3>
+                                                @if (count($errors) > 0)
+                                                    <div class="alert alert-danger">
+                                                        <ul>
+                                                            @foreach ($errors->all() as $error)
+                                                                <li >{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endif
                                                 <p class="form-row form-row form-row-first validate-required"
                                                    id="billing_first_name_field">
                                                     <label for="billing_first_name" class="">Имя: </label>
@@ -57,9 +68,10 @@
                                                            id="billing_email" placeholder="Ivanov@gmail.com"
                                                            autocomplete="email" value=""/>
                                                 </p>
+
                                                 <p class="form-row form-row form-row-last validate-required validate-phone"
                                                    id="billing_phone_field">
-                                                    <label for="billing_phone" class="">Телефон: </label>
+                                                    <label for="billing_phone" class="">Телефон:</label>
                                                     <input type="tel" class="input-text " name="billing_phone"
                                                            id="billing_phone" placeholder="+38 0ХХ ХХХ ХХ ХХ"
                                                            autocomplete="tel" value="" maxlength="13" required/>
