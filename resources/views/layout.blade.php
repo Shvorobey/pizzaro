@@ -15,26 +15,7 @@
           rel="stylesheet">
     <link rel="shortcut icon" href="/assets/images/fav-icon.png">
 
-    {{--<link rel="stylesheet" href="/css/soon.min.css" type="text/css">--}}
-    {{--<style>--}}
-        {{--html,body{margin:0;padding:0;line-height:1.5;font-family:'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}body p{text-align:center;}--}}
-    {{--</style>--}}
-    {{--<script src="/js/soon.min.js"></script>--}}
 
-
-    {{--<style>--}}
-        {{--body p{text-align:center;color:#ccc;}a{color:#eee;}--}}
-    {{--</style>--}}
-    {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--}}
-    {{--<script src="js/jquery.countdown.js"></script>--}}
-    {{--<script>--}}
-        {{--window.jQuery(function ($){--}}
-            {{--"use strict";--}}
-            {{--$('time').countDown({with_separators:false});--}}
-            {{--$('.alt-1').countDown({css_class:'countdown-alt-1'});--}}
-            {{--$('.alt-2').countDown({css_class:'countdown-alt-2'});--}}
-        {{--});--}}
-    {{--</script>--}}
 </head>
 <body id="top" class="@yield ('body-classes')">
 <div id="page" class="hfeed site">
@@ -45,13 +26,12 @@
 
 <!-- #content -->
 
-@include ('random-food')
+    @include ('random-food')
 
-{{--@yield ('subscribed')--}}
+    {{--@yield ('subscribed')--}}
 
-@include ('footer')
+    @include ('footer')
 
-<!-- #colophon -->
 </div>
 <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/js/tether.min.js"></script>

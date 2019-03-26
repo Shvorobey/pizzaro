@@ -42,7 +42,6 @@
             <hr>
         </div>
     </div>
-
     <div>
         <ul class="social-icons list-inline">
             @inject ('networks', '\App\Services\GetSocialNetworks' )
@@ -53,8 +52,7 @@
         </ul>
     </div>
 
-
-<!-- weather widget start -->
+    <!-- weather widget start -->
     <div id="m-booked-bl-simple-week-vertical-29867">
         <div class="booked-wzs-160-275 weather-customize" style="background-color:#0e2629; width:314px;" id="width4 ">
             <a target="_blank" class="booked-wzs-top-160-275" href="https://www.booked.net/"><img
@@ -163,6 +161,6 @@
     <script type="text/javascript" charset="UTF-8"
             src="//sinoptik.ua/informers_js.php?title=4&amp;wind=2&amp;cities=303018950,303010783,303014487&amp;lang=ru"></script>
     <script type="text/javascript"
-    src="//ra.revolvermaps.com/0/0/8.js?i=0xwy2m6nuym&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"
-    async="async"></script>
+            src="//ra.revolvermaps.com/0/0/8.js?i=0xwy2m6nuym&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"
+            async="async"></script>
 </div>

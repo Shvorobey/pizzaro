@@ -19,59 +19,59 @@
                                 <h2 class="section-title">Горячие предложения</h2>
                                 <h1 style="text-align:center;color:aqua;font-weight:bold;">ДО КОНЦА АКЦИИ ОСТАЛОСЬ</h1>
                                 {{--<style type="text/css">--}}
-                                        {{--#my-soon-counter .soon-reflection{background-color:aqua;background-image:linear-gradient(#ffffff 25%,rgba(255,255,255,0));}--}}
-                                        {{--#my-soon-counter .soon-label{color:#7d0003;}--}}
-                                        {{--#my-soon-counter .soon-ring-progress{background-color:#b00218;border-top-width:0.35000000000000003em;border-bottom-width:0.325em;}--}}
-                                    {{--</style>--}}
+                                {{--#my-soon-counter .soon-reflection{background-color:aqua;background-image:linear-gradient(#ffffff 25%,rgba(255,255,255,0));}--}}
+                                {{--#my-soon-counter .soon-label{color:#7d0003;}--}}
+                                {{--#my-soon-counter .soon-ring-progress{background-color:#b00218;border-top-width:0.35000000000000003em;border-bottom-width:0.325em;}--}}
+                                {{--</style>--}}
 
-                                    {{--<div class="soon" id="my-soon-counter"--}}
-                                         {{--data-due="2020-03-30T00:00:00"--}}
-                                         {{--data-layout="inline label-uppercase label-small"--}}
-                                         {{--data-scale-max="m"--}}
-                                         {{--data-format="d,h,m,s"--}}
-                                         {{--data-face="slot rotate"--}}
-                                         {{--data-visual="ring cap-round progressgradient-00fff6_075fff ring-width-custom gap-0"--}}
-                                         {{--data-labels-days="Дни,Дней"--}}
-                                         {{--data-labels-hours="Часы,Часов"--}}
-                                         {{--data-labels-minutes="Минуты,Минут"--}}
-                                         {{--data-labels-seconds="Секунды,Секунд">--}}
-                                    {{--</div>--}}
+                                {{--<div class="soon" id="my-soon-counter"--}}
+                                {{--data-due="2020-03-30T00:00:00"--}}
+                                {{--data-layout="inline label-uppercase label-small"--}}
+                                {{--data-scale-max="m"--}}
+                                {{--data-format="d,h,m,s"--}}
+                                {{--data-face="slot rotate"--}}
+                                {{--data-visual="ring cap-round progressgradient-00fff6_075fff ring-width-custom gap-0"--}}
+                                {{--data-labels-days="Дни,Дней"--}}
+                                {{--data-labels-hours="Часы,Часов"--}}
+                                {{--data-labels-minutes="Минуты,Минут"--}}
+                                {{--data-labels-seconds="Секунды,Секунд">--}}
+                                {{--</div>--}}
 
-                                    {{--<div class="soon" id="my-soon-counter"--}}
-                                         {{--data-due="2020-04-28T04:13:34"--}}
-                                         {{--data-layout="group label-lowercase"--}}
-                                         {{--data-face="flip color-dark corners-sharp"--}}
-                                         {{--data-format="d,h,m,s"--}}
-                                         {{--data-labels-days="Дни,Дней"--}}
-                                         {{--data-labels-hours="Часы,Часов"--}}
-                                         {{--data-labels-minutes="Минуты,Минут"--}}
-                                         {{--data-labels-seconds="Секунды,Секунд">--}}
-                                    {{--</div>--}}
+                                {{--<div class="soon" id="my-soon-counter"--}}
+                                {{--data-due="2020-04-28T04:13:34"--}}
+                                {{--data-layout="group label-lowercase"--}}
+                                {{--data-face="flip color-dark corners-sharp"--}}
+                                {{--data-format="d,h,m,s"--}}
+                                {{--data-labels-days="Дни,Дней"--}}
+                                {{--data-labels-hours="Часы,Часов"--}}
+                                {{--data-labels-minutes="Минуты,Минут"--}}
+                                {{--data-labels-seconds="Секунды,Секунд">--}}
+                                {{--</div>--}}
 
-                                    {{--<div class="soon" id="my-soon-counter"--}}
-                                         {{--data-due="2020-05-12T13:43:12"--}}
-                                         {{--data-layout="group label-uppercase"--}}
-                                         {{--data-face="flip color-light shadow-soft fast corners-round"--}}
-                                         {{--data-format="d,h,m,s"--}}
-                                         {{--data-labels-days="Дни,Дней"--}}
-                                         {{--data-labels-hours="Часы,Часов"--}}
-                                         {{--data-labels-minutes="Минуты,Минут"--}}
-                                         {{--data-labels-seconds="Секунды,Секунд">--}}
-                                    {{--</div>--}}
+                                {{--<div class="soon" id="my-soon-counter"--}}
+                                {{--data-due="2020-05-12T13:43:12"--}}
+                                {{--data-layout="group label-uppercase"--}}
+                                {{--data-face="flip color-light shadow-soft fast corners-round"--}}
+                                {{--data-format="d,h,m,s"--}}
+                                {{--data-labels-days="Дни,Дней"--}}
+                                {{--data-labels-hours="Часы,Часов"--}}
+                                {{--data-labels-minutes="Минуты,Минут"--}}
+                                {{--data-labels-seconds="Секунды,Секунд">--}}
+                                {{--</div>--}}
 
-                                    {{--<div class="soon" id="my-soon-counter"--}}
-                                         {{--data-due="2020-06-22T23:27:48"--}}
-                                         {{--data-layout="group tight label-small label-above"--}}
-                                         {{--data-scale-max="m"--}}
-                                         {{--data-separate-chars="false"--}}
-                                         {{--data-reflect="true"--}}
-                                         {{--data-face="flip color-dark corners-round"--}}
-                                         {{--data-format="d,h,m,s"--}}
-                                         {{--data-labels-days="Дни,Дней"--}}
-                                         {{--data-labels-hours="Часы,Часов"--}}
-                                         {{--data-labels-minutes="Минуты,Минут"--}}
-                                         {{--data-labels-seconds="Секунды,Секунд">--}}
-                                    {{--</div>--}}
+                                {{--<div class="soon" id="my-soon-counter"--}}
+                                {{--data-due="2020-06-22T23:27:48"--}}
+                                {{--data-layout="group tight label-small label-above"--}}
+                                {{--data-scale-max="m"--}}
+                                {{--data-separate-chars="false"--}}
+                                {{--data-reflect="true"--}}
+                                {{--data-face="flip color-dark corners-round"--}}
+                                {{--data-format="d,h,m,s"--}}
+                                {{--data-labels-days="Дни,Дней"--}}
+                                {{--data-labels-hours="Часы,Часов"--}}
+                                {{--data-labels-minutes="Минуты,Минут"--}}
+                                {{--data-labels-seconds="Секунды,Секунд">--}}
+                                {{--</div>--}}
 
                                 <script src="//megatimer.ru/get/0d9cb09cf012e1e0bab95cb0d692d9cf.js"></script>
 
@@ -99,9 +99,7 @@
         </div>
         <div class="section-products">
             <h2 class="section-title">Попробуйте сегодня</h2>
-
             <div class="columns-4">
-
                 <ul class="products">
                     @inject ('products', '\App\Services\RandomProductsService' )
                     @foreach($products->getRandomProducts() as $product)
@@ -153,7 +151,6 @@
                             <!-- /.product-outer -->
                         </li>
                     @endforeach
-
                 </ul>
             </div>
         </div>
@@ -182,9 +179,9 @@
                                                         class="woocommerce-Price-amount amount"><span
                                                             class="woocommerce-Price-currencySymbol"></span>{{$item->price}} грн.</span></span>
                                         </a>
-
                                         @endforeach
                                     </div>
+
                         </a>
 
                 </div>
@@ -232,10 +229,7 @@
         </div>
     </div>
     </main>
-
     </div>
     </div>
-    </div>
-
 @endsection
 
