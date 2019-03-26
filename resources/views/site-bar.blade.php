@@ -9,7 +9,6 @@
             <p>Чтобы хорошо готовить, недостаточно любить покушать. Надо полюбить сам процесс, вкладывать в каждую его
                 минуту любовь.</p>
         </div>
-
     </div>
     <div id="search-2" class="widget widget_search">
         <hr>
@@ -28,7 +27,6 @@
                 </div>
             </div>
         </form>
-
         <hr>
     </div>
     <div id="tag_cloud-2" class="widget widget_tag_cloud">
@@ -36,22 +34,19 @@
         <span class="gamma widget-title">Категории:</span>
         <div class="tagcloud">
             @inject('categories', '\App\Services\CategoriesForSidebar')
-
             {{ $categories->show_categories() }}
-
             <hr>
         </div>
     </div>
-    <div>
-        <ul class="social-icons list-inline">
+    <div id="tag_cloud-2" class="widget widget_tag_cloud">
+        <span class="gamma widget-title">Мы в соц. сетях:</span>
+        <ul>
             @inject ('networks', '\App\Services\GetSocialNetworks' )
-
             @foreach($networks->getSocialNetworks() as $network)
-                <li><a class="fa {{$network->icon}}" href="{{$network->key}}"></a></li>
+                <Ol><a class="fa {{$network->icon}}" href="{{$network->key}}"> {{$network->name}}</a></Ol>
             @endforeach
         </ul>
     </div>
-
     <!-- weather widget start -->
     <div id="m-booked-bl-simple-week-vertical-29867">
         <div class="booked-wzs-160-275 weather-customize" style="background-color:#0e2629; width:314px;" id="width4 ">

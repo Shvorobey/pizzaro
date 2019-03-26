@@ -14,7 +14,9 @@
                 @endforeach
 
             </ul>
-            {{--</span>--}}
+        </div>
+
+        {{--</span>--}}
         </div>
 
         <div class="footer-logo">
@@ -40,7 +42,7 @@
         </div>
         <p><a class="address" href="#top"><font size="5" color="aqua" face="Arial">Вернуться в начало</font></a></p>
         <!-- .site-info --> <a role="button" class="footer-action-btn" data-toggle="collapse"
-                               href="#footer-map-collapse"><i class="po po-map-marker"></i>Мы на карте</a>
+                               href="{{route('locator')}}"><i class="po po-map-marker"></i>Мы на карте</a>
         <div class="pizzaro-handheld-footer-bar">
             <ul class="columns-3">
                 <li class="my-account">
