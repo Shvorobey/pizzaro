@@ -8,14 +8,8 @@
             <h2>Добро пожаловать</h2>
             <p>Чтобы хорошо готовить, недостаточно любить покушать. Надо полюбить сам процесс, вкладывать в каждую его
                 минуту любовь.</p>
-            <ul class="social-icons list-inline">
-                @inject ('networks', '\App\Services\GetSocialNetworks' )
-
-                @foreach($networks->getSocialNetworks() as $network)
-                    <li><a class="fa {{$network->icon}}" href="{{$network->key}}"></a></li>
-                @endforeach
-            </ul>
         </div>
+
     </div>
     <div id="search-2" class="widget widget_search">
         <hr>
@@ -34,13 +28,7 @@
                 </div>
             </div>
         </form>
-        {{--<form role="search" method="get" class="search-form" action="blog-single.html">--}}
-        {{--<label>--}}
-        {{--<span class="screen-reader-text">Search for:</span>--}}
-        {{--<input type="search" class="search-field" placeholder="Найти..." value="" name="s"/>--}}
-        {{--</label>--}}
-        {{--<input type="submit" class="search-submit" value="Search"/>--}}
-        {{--</form>--}}
+
         <hr>
     </div>
     <div id="tag_cloud-2" class="widget widget_tag_cloud">
@@ -55,84 +43,16 @@
         </div>
     </div>
 
+    <div>
+        <ul class="social-icons list-inline">
+            @inject ('networks', '\App\Services\GetSocialNetworks' )
 
-{{--Sinoptik informer--}}
-{{--<div id="SinoptikInformer" style="width:311px;"--}}
-{{--class="SinoptikInformer type5c1">--}}
-{{--<div class="siHeader">--}}
-{{--<div class="siLh">--}}
-{{--<div class="siMh">--}}
-{{--<a onmousedown="siClickCount();" class="siLogo" href="https://sinoptik.ua/" target="_blank"--}}
-{{--rel="nofollow" title="Погода"> </a>Погода <span id="siHeader"></span>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="siBody">--}}
-{{--<a onmousedown="siClickCount();" href="https://sinoptik.ua/погода-одесса" title="Погода в Одессе"--}}
-{{--target="_blank">--}}
-{{--<div class="siCity">--}}
-{{--<div class="siCityName">--}}
-{{--<span>Одесса (Одеса)</span>--}}
-{{--</div>--}}
-{{--<div id="siCont0" class="siBodyContent">--}}
-{{--<div class="siLeft">--}}
-{{--<div class="siTerm"></div>--}}
-{{--<div class="siT" id="siT0"></div>--}}
-{{--<div id="weatherIco0"></div>--}}
-{{--</div>--}}
-{{--<div class="siInf"><p>влажность: <span id="vl0"></span></p>--}}
-{{--<p>давление: <span id="dav0"></span></p>--}}
-{{--<p>ветер: <span id="wind0"></span></p>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</a>--}}
-{{--<a onmousedown="siClickCount();" href="https://sinoptik.ua/погода-киев" title="Погода в Киеве"--}}
-{{--target="_blank">--}}
-{{--<div class="siCity">--}}
-{{--<div class="siCityName"><span>Киев</span>--}}
-{{--</div>--}}
-{{--<div id="siCont1" class="siBodyContent">--}}
-{{--<div class="siLeft">--}}
-{{--<div class="siTerm"></div>--}}
-{{--<div class="siT" id="siT1"></div>--}}
-{{--<div id="weatherIco1"></div>--}}
-{{--</div>--}}
-{{--<div class="siInf">--}}
-{{--<p>влажность: <span id="vl1"></span></p>--}}
-{{--<p>давление: <span id="dav1"></span></p>--}}
-{{--<p>ветер: <span id="wind1"></span></p>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</a><a onmousedown="siClickCount();" href="https://sinoptik.ua/погода-львов" title="Погода во Львове"--}}
-{{--target="_blank">--}}
-{{--<div class="siCity">--}}
-{{--<div class="siCityName"><span>Львов</span></div>--}}
-{{--<div id="siCont2" class="siBodyContent">--}}
-{{--<div class="siLeft">--}}
-{{--<div class="siTerm"></div>--}}
-{{--<div class="siT" id="siT2"></div>--}}
-{{--<div id="weatherIco2"></div>--}}
-{{--</div>--}}
-{{--<div class="siInf">--}}
-{{--<p>влажность: <span id="vl2"></span></p>--}}
-{{--<p>давление: <span id="dav2"></span></p>--}}
-{{--<p>ветер: <span id="wind2"></span></p></div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</a>--}}
-{{--<div class="siLinks">Погода на 10 дней от <a href="https://sinoptik.ua/10-дней" title="Погода на 10 дней"--}}
-{{--target="_blank" onmousedown="siClickCount();"> sinoptik.ua</a>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="siFooter">--}}
-{{--<div class="siLf">--}}
-{{--<div class="siMf"></div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--Sinoptik informer--end--}}
+            @foreach($networks->getSocialNetworks() as $network)
+                <li><a class="fa {{$network->icon}}" href="{{$network->key}}"></a></li>
+            @endforeach
+        </ul>
+    </div>
+
 
 <!-- weather widget start -->
     <div id="m-booked-bl-simple-week-vertical-29867">
@@ -242,7 +162,7 @@
     </div>
     <script type="text/javascript" charset="UTF-8"
             src="//sinoptik.ua/informers_js.php?title=4&amp;wind=2&amp;cities=303018950,303010783,303014487&amp;lang=ru"></script>
-    {{--<script type="text/javascript"--}}
-    {{--src="//ra.revolvermaps.com/0/0/8.js?i=0xwy2m6nuym&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"--}}
-    {{--async="async"></script>--}}
+    <script type="text/javascript"
+    src="//ra.revolvermaps.com/0/0/8.js?i=0xwy2m6nuym&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"
+    async="async"></script>
 </div>

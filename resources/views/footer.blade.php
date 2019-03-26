@@ -1,16 +1,20 @@
-<footer id="colophon" class="site-footer footer-v1" xmlns="http://www.w3.org/1999/html">
+<footer id="colophon" class="site-footer footer-v1">
 
     <div class="col-full">
+
         <div class="footer-social-icons">
             <span class="social-icon-text">Follow us</span>
             <ul class="social-icons list-unstyled">
+
                 @inject ('networks', '\App\Services\GetSocialNetworks' )
 
                 @foreach($networks->getSocialNetworks() as $network)
+
                     <li><a class="fa {{$network->icon}}" href="{{$network->key}}"></a></li>
                 @endforeach
+
             </ul>
-            </span>
+            {{--</span>--}}
         </div>
 
         <div class="footer-logo">

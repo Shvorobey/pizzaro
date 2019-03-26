@@ -13,13 +13,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 final class GetSocialNetworks
 
-
 {
-    use SoftDeletes;
+//    use SoftDeletes;
+//    public $networks;
 
     public function getSocialNetworks()
     {
+//        $networks = SocialNetworks::all();
+//        return $networks;
         return SocialNetworks::all();
-
     }
 }
