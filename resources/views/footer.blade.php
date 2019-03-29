@@ -1,23 +1,18 @@
-<footer id="colophon" class="site-footer footer-v1">
+<footer id="colophon" class="site-footer footer-v1" xmlns="http://www.w3.org/1999/html">
 
     <div class="col-full">
-
         <div class="footer-social-icons">
             <span class="social-icon-text">Follow us</span>
             <ul class="social-icons list-unstyled">
-
                 @inject ('networks', '\App\Services\GetSocialNetworks' )
 
                 @foreach($networks->getSocialNetworks() as $network)
-
                     <li><a class="fa {{$network->icon}}" href="{{$network->key}}"></a></li>
                 @endforeach
-
             </ul>
+            </span>
         </div>
 
-        {{--</span>--}}
-        </div>
 
         <div class="footer-logo">
             <a href="{{route('home')}}" class="custom-logo-link" rel="home">
@@ -42,7 +37,7 @@
         </div>
         <p><a class="address" href="#top"><font size="5" color="aqua" face="Arial">Вернуться в начало</font></a></p>
         <!-- .site-info --> <a role="button" class="footer-action-btn" data-toggle="collapse"
-                               href="{{route('locator')}}"><i class="po po-map-marker"></i>Мы на карте</a>
+                               href="#footer-map-collapse"><i class="po po-map-marker"></i>Мы на карте</a>
         <div class="pizzaro-handheld-footer-bar">
             <ul class="columns-3">
                 <li class="my-account">

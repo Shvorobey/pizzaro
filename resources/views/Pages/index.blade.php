@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('body-classes','full-width grid-view columns-3 archive woocommerce-page dark')
-
+{{--@include ('loading')--}}
 @section('content')
 
     <div id="content" class="site-content" tabindex="-1">
