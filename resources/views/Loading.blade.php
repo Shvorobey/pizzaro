@@ -2,8 +2,8 @@
 
     <div>
 
-        <img src="/images/load.gif">
-        <img src="/images/loading.gif">
+        <img src="/images/Load.gif">
+        <img src="/images/Loading.gif">
 
     </div>
 
@@ -16,27 +16,27 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: #2F4F4F;
+        background: #FFFFFF;
         z-index: 99
     }
 
     #preloader_malc div {
-        background: #2F4F4F;
-        width: 200px;
-        height: 210px;
+        background: #FFFFFF;
+        width: 300px;
+        height: 400px;
         line-height: 40px;
         border-radius: 8px;
         font-family: arial;
         font-size: 25px;
         color: #FFFFFF;
         text-align: center;
-        box-shadow: 0 2px 6px #2F4F4F;
+        box-shadow: 0 2px 6px #FFFFFF;
         position: fixed;
         z-index: 999;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: 10;
         margin: auto
     }
 </style>
@@ -49,7 +49,7 @@
 
             document.getElementById("preloader_malc").style.display = "none";
 
-        }, 1500);
+        }, 2000);
 
     };
 
