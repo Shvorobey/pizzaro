@@ -159,10 +159,13 @@
     </div>
     <script type="text/javascript" charset="UTF-8"
             src="//sinoptik.ua/informers_js.php?title=4&amp;wind=2&amp;cities=303018950,303010783,303014487&amp;lang=ru"></script>
+
     <script type="text/javascript"
             src="//ra.revolvermaps.com/0/0/8.js?i=0xwy2m6nuym&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"
             async="async"></script>
+
     <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+
     <script type="text/javascript">
         var delay = 600;
         $(document).ready(function() {
@@ -174,6 +177,7 @@
             });
         });
     </script>
+
     <script type="text/javascript">
         var delay = 500;
         $(document).ready(function() {
@@ -185,4 +189,5 @@
             });
         });
     </script>
+
 </div>
