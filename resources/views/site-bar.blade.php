@@ -47,7 +47,10 @@
             @endforeach
         </ul>
     </div>
+
     <!-- weather widget start -->
+    <div id="tag_cloud-2" class="widget widget_tag_cloud">
+    <span class="gamma widget-title">Прогноз погоды:</span>
     <div id="m-booked-bl-simple-week-vertical-29867">
         <div class="booked-wzs-160-275 weather-customize" style="background-color:#0e2629; width:314px;" id="width4 ">
             <a target="_blank" class="booked-wzs-top-160-275" href="https://www.booked.net/"><img
@@ -151,6 +154,7 @@
             } </script>
         <script type="text/javascript" charset="UTF-8"
                 src="https://widgets.booked.net/weather/info?action=get_weather_info&ver=6&cityID=7764&type=4&scode=124&ltid=3540&domid=604&anc_id=4847&cmetric=1&wlangID=20&color=0e2629&wwidth=314&header_color=ffffff&text_color=333333&link_color=08488D&border_form=1&footer_color=ffffff&footer_text_color=333333&transparent=0"></script>
+    </div>
         <!-- weather widget end -->
     </div>
     <script type="text/javascript" charset="UTF-8"
@@ -158,4 +162,27 @@
     <script type="text/javascript"
             src="//ra.revolvermaps.com/0/0/8.js?i=0xwy2m6nuym&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"
             async="async"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        var delay = 600;
+        $(document).ready(function() {
+            $(".widget_tag_cloud span").bind("click", function(event) {
+                var parent = $(event.target).parent();
+                var a = parent.find("a");
+                if ($(a).is(":visible")) $(a).slideUp(delay);
+                else $(a).slideDown(delay);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var delay = 500;
+        $(document).ready(function() {
+            $(".about-info h2").bind("click", function(event) {
+                var parent = $(event.target).parent();
+                var p = parent.find("p");
+                if ($(p).is(":visible")) $(p).slideUp(delay);
+                else $(p).slideDown(delay);
+            });
+        });
+    </script>
 </div>

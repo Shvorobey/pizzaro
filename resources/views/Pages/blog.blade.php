@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div id="content" class="site-content" tabindex="-1">
+        <div id="content" class="site-content" tabindex="-1">
         <div class="col-full">
             <div class="pizzaro-breadcrumb">
                 <nav class="woocommerce-breadcrumb">
@@ -123,10 +123,9 @@
         <!-- #secondary -->
     </div>
     @include('subscribed')
-    <!-- .col-full -->
-    </div>
+        <br>
 
-
+        <script src = "/js/hello.js"> </script>
 @endsection
 
 
