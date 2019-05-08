@@ -90,7 +90,7 @@
                 <div class="header-phone-numbers">
                     <span class="intro-text">Заказать в </span>
                     <select class="select-city-phone-numbers" name="city-phone-numbers" id="city-phone-numbers">
-                        <option value="048 777-77-77">Одесса</option>
+                        <option value="048 777-77-77">Oдесса</option>
                         <option value="044 555-55-55">Киев</option>
                         <option value="032 333-33-33">Львов</option>
                     </select>
