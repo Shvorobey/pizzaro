@@ -64,11 +64,12 @@
                         @endif
                         <li class="menu-item"><a href="{{route('blog')}}">Блог</a></li>
                         <li class="menu-item"><a href="{{route('locator')}}">Мы на карте</a></li>
-                        <li class="menu-item"><a href="store-locator.html"></a></li>
-                        <li class="menu-item"><a
+                        <li class="menu-item"><a href="store-locator.html">404</a></li>
+                                                <li class="menu-item"><a
                                     href="  {{route('admin')}}">@if (\Auth::check ()){{\Auth::user()->name}}
                                 @else Вход @endif</a></li>
                     </ul>
+
                 </div>
 
                 <div class="handheld-navigation">
@@ -97,6 +98,10 @@
 
                     <span id="city-phone-number-label" class="phone-number">048 777-77-77</span>
                 </div>
+
+                    <font color="olive"> Курс доллара: </font>
+                    @inject ('courses', '\App\Services\CurrencyService' )
+                    {{$courses->get_currency()}}
 
                 <ul class="site-header-cart-v2 menu">
                     <li class="cart-content ">
