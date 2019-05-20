@@ -9,16 +9,19 @@ final class CurrencyService
     protected $data;
     public $usdCours;
 
-    public function get_currency()
+    public function get_currency($curr = 'USD')
     {
         $data=file_get_contents(self::LINK);
+        if (!$data) return false;
         $courses=json_decode($data, true);
+        $course_curr = false;
         foreach ($courses as $cours){
-            if ($cours ['ccy'] == 'USD') {
-                $usdCours =$cours ['buy'];
+            if ($cours ['ccy'] == $curr) {
+                $course_curr = $cours ['buy'];
+                $course_country = $cours ['ccy'];
                 break;
             }
         }
-echo "<strong> $usdCours </strong> " ;
+echo "<strong> 1 $course_country =  $course_curr грн. </strong> " ;
     }
 }

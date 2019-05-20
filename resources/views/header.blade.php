@@ -99,9 +99,9 @@
                     <span id="city-phone-number-label" class="phone-number">048 777-77-77</span>
                 </div>
 
-                    <font color="olive"> Курс доллара: </font>
+                    <font color="olive"> Курс </font>
                     @inject ('courses', '\App\Services\CurrencyService' )
-                    {{$courses->get_currency()}}
+                    {{$courses->get_currency('USD')}}
 
                 <ul class="site-header-cart-v2 menu">
                     <li class="cart-content ">
